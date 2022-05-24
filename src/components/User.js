@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { CheckAuth } from '../actions';
 import store from '../store';
+import { Navigate } from "react-router-dom";
 
 function User(props) {
 
@@ -17,9 +18,7 @@ function User(props) {
     )
   } else {
     return (
-      <div>
-        <h1>Not logged in</h1>
-      </div>
+      <Navigate to="/login" />
     )
   }
 
