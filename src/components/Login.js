@@ -26,9 +26,16 @@ function Login(props) {
 
     return (
       <div>
+        <div>
+          {props.register ? (
+            <h1>Usuário registrado com sucesso</h1>
+          ) : (
+            <span></span>
+          )}
+        </div>
         <h1>{props.fail}</h1>
-        <LoginForm onSubmit={submit} />
-        <Link auth={props.auth.toString()} to="/user">User</Link>
+        <LoginForm auth={props.auth.toString()} onSubmit={submit} />
+        <Link  to="/redefinir">Esqueceu a senha?</Link>
       </div>
     )
   }
@@ -39,7 +46,8 @@ function mapStateToProps(state) {
   return {
     auth: state.auth,
     fail: state.fail,
-    jwt: state.jwt
+    jwt: state.jwt,
+    register: state.register
   }
 }
 

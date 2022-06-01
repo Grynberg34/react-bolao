@@ -14,11 +14,33 @@ export const LogInUser = (user) => async dispatch => {
 export const RegisterUser = (user) => async dispatch => {
     
     await api.post('/cadastro', user).then(function(response){
-        console.log(response)
         dispatch({ type: 'REGISTER_USER', payload: true });
     }).catch(function(err){
         dispatch({ type: 'FAIL_REGISTER', payload: err.response.data});
     })
+    
+};
+
+export const RedefinePassword = (email) => async dispatch => {
+    
+    await api.post('/redefinir', email).then(function(){
+        dispatch({ type: 'REDEFINE_PASSWORD', payload: true });
+    }).catch(function(err){
+        dispatch({ type: 'FAIL_REDEFINE', payload: err.response.data});
+    })
+    
+};
+
+export const DefineNewPassword = (newpass) => async dispatch => {
+    
+    await api.post('/redefinir/nova-senha', newpass).then(function(response){
+        console.log(response)
+        dispatch({ type: 'DEFINE_PASSWORD', payload: true });
+    }).catch(function(err){
+        console.log(err)
+        dispatch({ type: 'FAIL_PASSWORD', payload: err.response.data});
+    })
+
     
 };
 

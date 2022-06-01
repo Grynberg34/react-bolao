@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import App from './components/App';
 import Cadastro from './components/Cadastro';
 import Login from './components/Login';
+import Redefinir from './components/Redefinir';
 import User from './components/User';
 import store from './store.js';
 
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="cadastro" element={<Cadastro />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="user" element={<User />}></Route>
+        <Route path="redefinir" element={<Redefinir />}></Route>
       </Routes>
     </BrowserRouter>
   </Provider>,
