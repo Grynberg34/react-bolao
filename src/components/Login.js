@@ -1,10 +1,12 @@
 import React from 'react';
 import LoginForm from './LoginForm';
 import { LogInUser } from '../actions';
-import { connect } from 'react-redux';
 import { CheckAuth } from '../actions';
-import store from '../store';
+import { AuthGoogle } from '../actions';
+import { connect } from 'react-redux';
+import { store } from '../store';
 import { Link, Navigate } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 
 function Login(props) {
 
@@ -13,6 +15,12 @@ function Login(props) {
     store.dispatch(LogInUser(values))
 
   }
+
+  const responseGoogle = (response) => {
+
+    store.dispatch(AuthGoogle(response));
+
+  }  
 
   store.dispatch(CheckAuth(props.jwt))
 
@@ -34,7 +42,13 @@ function Login(props) {
           )}
         </div>
         <h1>{props.fail}</h1>
-        <LoginForm auth={props.auth.toString()} onSubmit={submit} />
+        <LoginForm onSubmit={submit} />
+        <GoogleLogin
+          clientId= "390518303780-jh735t86sg11luhqg21vm52q66r4qcha.apps.googleusercontent.com"
+          buttonText="Faça login com a conta Google"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+        />
         <Link  to="/redefinir">Esqueceu a senha?</Link>
       </div>
     )

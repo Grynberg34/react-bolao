@@ -5,7 +5,7 @@ import { RedefinePassword } from '../actions';
 import { DefineNewPassword } from '../actions';
 import { connect } from 'react-redux';
 import { CheckAuth } from '../actions';
-import store from '../store';
+import { store } from '../store';
 import { Link, Navigate } from "react-router-dom";
 
 function Redefinir(props) {
@@ -55,7 +55,7 @@ function Redefinir(props) {
     return (
       <div>
         <h1>{props.failRedefine}</h1>
-        <RedefinirForm redefine={props.redefine.toString()} auth={props.auth.toString()} onSubmit={submitEmail} />
+        <RedefinirForm onSubmit={submitEmail} />
       </div>
     )
   }

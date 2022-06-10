@@ -34,14 +34,12 @@ export const RedefinePassword = (email) => async dispatch => {
 export const DefineNewPassword = (newpass) => async dispatch => {
     
     await api.post('/redefinir/nova-senha', newpass).then(function(response){
-        console.log(response)
         dispatch({ type: 'DEFINE_PASSWORD', payload: true });
     }).catch(function(err){
         console.log(err)
         dispatch({ type: 'FAIL_PASSWORD', payload: err.response.data});
     })
 
-    
 };
 
 export const CheckAuth = (token) => async dispatch => {
@@ -63,4 +61,23 @@ export const CheckAuth = (token) => async dispatch => {
         console.log(err)
     })
 
+};
+
+export const AuthGoogle = (googleUser) => async dispatch => {
+
+    await api.post('/auth/google/signin', {
+        name: googleUser.profileObj.name,
+        googleID: googleUser.googleId
+    }).then(function(response){
+        dispatch({ type: 'LOGIN_USER', payload: response.data.token });
+    }).catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const LogoutUser = () => async dispatch => {
+
+    await dispatch({ type: 'LOGIN_USER', payload: "" });
+    await dispatch({ type: 'CHECK_AUTH', payload: false });
 };

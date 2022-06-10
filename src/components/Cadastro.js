@@ -2,19 +2,27 @@ import React from 'react';
 import CadastroForm from './CadastroForm';
 import { RegisterUser } from '../actions';
 import { CheckAuth } from '../actions';
+import { AuthGoogle } from '../actions';
 import { connect } from 'react-redux';
-import store from '../store';
+import { store } from '../store';
 import { Link, Navigate } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 
 function Cadastro(props) {
 
   function submit (values) {
 
-    store.dispatch(RegisterUser(values))
+    store.dispatch(RegisterUser(values));
 
   }
 
-  store.dispatch(CheckAuth(props.jwt))
+  const responseGoogle = (response) => {
+
+    store.dispatch(AuthGoogle(response));
+
+  }  
+
+  store.dispatch(CheckAuth(props.jwt));
 
   var auth =  props.auth;
   var register = props.register;
@@ -34,7 +42,14 @@ function Cadastro(props) {
       <div>
         <h1>{props.failRegister}</h1>
         <CadastroForm onSubmit={submit} />
-        <Link auth={props.register.toString()} to="/login">Login</Link>
+        <GoogleLogin
+          clientId= "390518303780-jh735t86sg11luhqg21vm52q66r4qcha.apps.googleusercontent.com"
+          buttonText="Cadastre-se com a conta Google"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+        />
+        <br></br>
+        <Link to="/login">Login</Link>
       </div>
     )
   }
