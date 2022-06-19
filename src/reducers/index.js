@@ -57,6 +57,44 @@ const checkAuthReducer = (auth = false, action) => {
   return auth;
 };
 
+//CHECK USER
+
+const checkUserReducer = (user = null, action) => {
+  if (action.type === 'CHECK_USER') {
+
+    return action.payload;
+  }
+  
+  return user;
+};
+
+const checkPixReducer = (pix = false, action) => {
+  if (action.type === 'CHECK_PIX') {
+
+    return action.payload;
+  }
+  
+  return pix;
+};
+
+const checkVerifiedReducer = (verified = false, action) => {
+  if (action.type === 'CHECK_VERIFIED') {
+
+    return action.payload;
+  }
+  
+  return verified;
+};
+
+const checkDoneReducer = (done = false, action) => {
+  if (action.type === 'CHECK_PIX') {
+
+    return action.payload;
+  }
+  
+  return done;
+};
+
 //REDEFINE PASSWORD
 
 const userRedefineReducer = (email = false, action) => {
@@ -104,6 +142,10 @@ export default combineReducers({
   jwt: userLogInReducer,
   auth: checkAuthReducer,
   fail: failedLogInReducer,
+  user: checkUserReducer,
+  pix: checkPixReducer,
+  verified: checkVerifiedReducer,
+  done: checkDoneReducer,
   register: userRegisterReducer,
   failRegister: failedRegisterReducer,
   redefine: userRedefineReducer,

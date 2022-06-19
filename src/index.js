@@ -20,8 +20,8 @@ ReactDOM.render(
           <Route path="/" element={<App />}></Route>
           <Route path="cadastro" element={<Cadastro />}></Route>
           <Route path="login" element={<Login />}></Route>
-          <Route path="user" element={<User />}></Route>
           <Route path="redefinir" element={<Redefinir />}></Route>
+          <Route path="user" element={<User />}></Route>
         </Routes>
       </BrowserRouter>
     </PersistGate>

@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
-import storageSession from 'redux-persist/lib/storage/session'
+import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 
 const persistConfig = {
     key: 'root',
-    storage: storageSession,
+    storage: storage,
     whitelist: ['jwt']
 }
    

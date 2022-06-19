@@ -22,7 +22,9 @@ function Cadastro(props) {
 
   }  
 
-  store.dispatch(CheckAuth(props.jwt));
+  if (props.jwt !== null) {
+    store.dispatch(CheckAuth(props.jwt))
+  }
 
   var auth =  props.auth;
   var register = props.register;

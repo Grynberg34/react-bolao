@@ -5,8 +5,8 @@ export const LogInUser = (user) => async dispatch => {
     await api.post('/login', user).then(function(response){
         dispatch({ type: 'LOGIN_USER', payload: response.data.token });
     }).catch(function(err){
-        dispatch({ type: 'FAIL_LOGIN', payload: 'Usuário e/ou senha incorretos. Tente novamente.' });
-        console.log(err)
+        console.log(err.response);
+        dispatch({ type: 'FAIL_LOGIN', payload: err.response.data.mensagem});
     })
     
 };
@@ -14,9 +14,11 @@ export const LogInUser = (user) => async dispatch => {
 export const RegisterUser = (user) => async dispatch => {
     
     await api.post('/cadastro', user).then(function(response){
+        console.log(response)
         dispatch({ type: 'REGISTER_USER', payload: true });
     }).catch(function(err){
-        dispatch({ type: 'FAIL_REGISTER', payload: err.response.data});
+        console.log(err);
+        dispatch({ type: 'FAIL_REGISTER', payload: err.response.data.mensagem});
     })
     
 };
@@ -26,7 +28,8 @@ export const RedefinePassword = (email) => async dispatch => {
     await api.post('/redefinir', email).then(function(){
         dispatch({ type: 'REDEFINE_PASSWORD', payload: true });
     }).catch(function(err){
-        dispatch({ type: 'FAIL_REDEFINE', payload: err.response.data});
+        console.log(err);
+        dispatch({ type: 'FAIL_REDEFINE', payload: err.response.data.mensagem});
     })
     
 };
@@ -37,7 +40,7 @@ export const DefineNewPassword = (newpass) => async dispatch => {
         dispatch({ type: 'DEFINE_PASSWORD', payload: true });
     }).catch(function(err){
         console.log(err)
-        dispatch({ type: 'FAIL_PASSWORD', payload: err.response.data});
+        dispatch({ type: 'FAIL_PASSWORD', payload: err.response.data.mensagem});
     })
 
 };
@@ -51,17 +54,19 @@ export const CheckAuth = (token) => async dispatch => {
     }).then(function(response){
         if (response.data.tipo_conta === 'user') {
             var auth = true;
-        } else {
-            auth = false;
-        }
-    
-        dispatch({ type: 'CHECK_AUTH', payload: auth});
+            dispatch({ type: 'CHECK_AUTH', payload: auth});
+            dispatch({ type: 'CHECK_USER', payload: response.data});
+            dispatch({ type: 'CHECK_PIX', payload: response.data.pix});
+            dispatch({ type: 'CHECK_VERIFIED', payload: response.data.verificado});
+            dispatch({ type: 'CHECK_DONE', payload: response.data.enviado});
+        } 
     })
     .catch(function(err){
         console.log(err)
     })
 
 };
+
 
 export const AuthGoogle = (googleUser) => async dispatch => {
 
@@ -78,6 +83,7 @@ export const AuthGoogle = (googleUser) => async dispatch => {
 
 export const LogoutUser = () => async dispatch => {
 
-    await dispatch({ type: 'LOGIN_USER', payload: "" });
+    await dispatch({ type: 'LOGIN_USER', payload: null });
     await dispatch({ type: 'CHECK_AUTH', payload: false });
+
 };

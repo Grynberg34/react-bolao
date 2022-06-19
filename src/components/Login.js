@@ -10,6 +10,7 @@ import GoogleLogin from 'react-google-login';
 
 function Login(props) {
 
+
   function submit (values) {
 
     store.dispatch(LogInUser(values))
@@ -20,9 +21,11 @@ function Login(props) {
 
     store.dispatch(AuthGoogle(response));
 
-  }  
+  }
 
-  store.dispatch(CheckAuth(props.jwt))
+  if(props.jwt !== null && props.auth !== true) {
+    store.dispatch(CheckAuth(props.jwt))
+  }
 
   var auth =  props.auth;
 

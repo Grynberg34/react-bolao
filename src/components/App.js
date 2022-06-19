@@ -7,7 +7,9 @@ import { Navigate } from "react-router-dom";
 
 function App(props) {
 
-  store.dispatch(CheckAuth(props.jwt));
+  if(props.jwt !== null && props.auth !== true) {
+    store.dispatch(CheckAuth(props.jwt))
+  }
 
   var auth =  props.auth;
 
