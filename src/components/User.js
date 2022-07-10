@@ -5,6 +5,8 @@ import { store } from '../store';
 import { Navigate } from "react-router-dom";
 import UserNaoVerificado from './UserNaoVerificado';
 import UserPix from './UserPix';
+import UserAberto from './UserAberto';
+import UserFechado from './UserFechado';
 
 
 function User(props) {
@@ -21,9 +23,13 @@ function User(props) {
         <UserNaoVerificado />
       )
     } else if (props.done === true) {
-
+      return (
+        <UserFechado/>
+      )
     } else if (props.pix === true) {
-
+      return (
+        <UserAberto />
+      )
     }
     return (
       <UserPix />

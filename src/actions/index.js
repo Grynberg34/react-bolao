@@ -1,5 +1,7 @@
 import api from '../api/api';
 
+// REGISTER, LOGIN, REDEFINE, AUTH
+
 export const LogInUser = (user) => async dispatch => {
     
     await api.post('/login', user).then(function(response){
@@ -14,7 +16,6 @@ export const LogInUser = (user) => async dispatch => {
 export const RegisterUser = (user) => async dispatch => {
     
     await api.post('/cadastro', user).then(function(response){
-        console.log(response)
         dispatch({ type: 'REGISTER_USER', payload: true });
     }).catch(function(err){
         console.log(err);
@@ -85,5 +86,22 @@ export const LogoutUser = () => async dispatch => {
 
     await dispatch({ type: 'LOGIN_USER', payload: null });
     await dispatch({ type: 'CHECK_AUTH', payload: false });
+
+};
+
+// BOLÃO
+
+export const GetGroups = (token) => async dispatch => {
+
+    await api.get('/user/jogos', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(function(response){
+        dispatch({ type: 'GET_GROUPS', payload: response.data });
+    })
+    .catch(function(err){
+        console.log(err)
+    })
 
 };

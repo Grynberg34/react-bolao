@@ -87,7 +87,7 @@ const checkVerifiedReducer = (verified = false, action) => {
 };
 
 const checkDoneReducer = (done = false, action) => {
-  if (action.type === 'CHECK_PIX') {
+  if (action.type === 'CHECK_DONE') {
 
     return action.payload;
   }
@@ -137,6 +137,18 @@ const failedNewPasswordReducer = (msg = '', action) => {
   return msg;
 };
 
+// GET GROUPS
+
+const getGroupsReducer = (groups = null, action) => {
+  if (action.type === 'GET_GROUPS') {
+
+    return action.payload;
+    
+  }
+  
+  return groups;
+};
+
 export default combineReducers({
 
   jwt: userLogInReducer,
@@ -152,6 +164,7 @@ export default combineReducers({
   failRedefine: failedRedefineReducer,
   newpass: defineNewPasswordReducer,
   failNewpass: failedNewPasswordReducer,
+  groups: getGroupsReducer,
   form: formReducer
   
 });
