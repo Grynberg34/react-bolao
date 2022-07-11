@@ -105,3 +105,27 @@ export const GetGroups = (token) => async dispatch => {
     })
 
 };
+
+export const SendResult = (token, info) => async dispatch => {
+
+    await api.post('/user/enviar-palpite-jogo', info, {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(){
+        await api.get('/user/classificacao', {
+            headers: {
+              'Authorization': `Bearer ${token}` 
+            }
+        }).then(function(response){
+            console.log(response.data)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+
+};

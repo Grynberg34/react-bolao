@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import { GetGroups } from '../actions';
+import { SendResult } from '../actions';
 import { Field, reduxForm } from 'redux-form'
 
 let Jogos= props => {
@@ -11,10 +12,16 @@ let Jogos= props => {
     var s1 = 's1-' + jogo;
     var s2 = 's2-' + jogo;
     var s1_placar = store.getState().form.Jogos.values[s1];
-    var s2_placar = store.getState().form.Jogos.values[s2]
+    var s2_placar = store.getState().form.Jogos.values[s2];
+
+    var info = {
+      id_jogo: jogo,
+      s1_placar: s1_placar,
+      s2_placar: s2_placar
+    }
 
     if (s1_placar >= 0 && s2_placar >= 0) {
-      console.log(store.getState().form.Jogos)
+      store.dispatch(SendResult(props.jwt, info))
     }
 
   }
