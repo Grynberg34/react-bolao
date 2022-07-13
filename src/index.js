@@ -8,7 +8,8 @@ import Login from './components/Login';
 import Redefinir from './components/Redefinir';
 import User from './components/User';
 import {store, persistor} from './store.js';
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

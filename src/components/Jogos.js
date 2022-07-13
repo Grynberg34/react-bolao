@@ -45,9 +45,9 @@ let Jogos= props => {
               <form onChange={submitGame}>
                 <div>
                   <label htmlFor={'s1-' + match.id}>{match.s1.nome}</label>
-                  <Field name={'s1-' + match.id} component="input" type="number" />
+                  <Field min='0' name={'s1-' + match.id} component="input" type="number" />
                   <label htmlFor={'s2-' + match.id}>{match.s2.nome}</label>
-                  <Field name={'s2-' + match.id} component="input" type="number" />
+                  <Field min='0' name={'s2-' + match.id} component="input" type="number" />
                 </div>
               </form>
             </div>

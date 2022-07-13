@@ -149,6 +149,22 @@ const getGroupsReducer = (groups = null, action) => {
   return groups;
 };
 
+const getGroupStandingsReducer = (groupStandings = null, action) => {
+  if (action.type === 'GET_GROUPSTANDINGS') {
+
+    return action.payload;
+    
+  }
+
+  if (action.type === 'INIT_GROUPSTANDINGS') {
+
+    return action.payload;
+    
+  }
+  
+  return groupStandings;
+};
+
 export default combineReducers({
 
   jwt: userLogInReducer,
@@ -165,6 +181,7 @@ export default combineReducers({
   newpass: defineNewPasswordReducer,
   failNewpass: failedNewPasswordReducer,
   groups: getGroupsReducer,
+  groupStandings: getGroupStandingsReducer,
   form: formReducer
   
 });

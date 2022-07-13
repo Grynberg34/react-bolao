@@ -118,12 +118,27 @@ export const SendResult = (token, info) => async dispatch => {
               'Authorization': `Bearer ${token}` 
             }
         }).then(function(response){
-            console.log(response.data)
+            dispatch({ type: 'GET_GROUPSTANDINGS', payload: response.data });
         })
         .catch(function(err){
             console.log(err)
         })
     })
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const GetGroupStandings = (token) => async dispatch => {
+
+    await api.get('/user/classificacao', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'INIT_GROUPSTANDINGS', payload: response.data });
+    })  
     .catch(function(err){
         console.log(err)
     })
