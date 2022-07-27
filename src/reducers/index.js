@@ -165,6 +165,27 @@ const getGroupStandingsReducer = (groupStandings = null, action) => {
   return groupStandings;
 };
 
+const checkGroupStageReducer = (groupsDone = false, action) => {
+  if (action.type === 'CHECK_GROUPS') {
+
+    return action.payload;
+    
+  }
+  
+  return groupsDone;
+};
+
+
+const getRound16Reducer = (playoffs = null, action) => {
+  if (action.type === 'GET_ROUND16') {
+
+    return action.payload;
+    
+  }
+  
+  return playoffs;
+};
+
 export default combineReducers({
 
   jwt: userLogInReducer,
@@ -182,6 +203,8 @@ export default combineReducers({
   failNewpass: failedNewPasswordReducer,
   groups: getGroupsReducer,
   groupStandings: getGroupStandingsReducer,
+  checkGroupStage: checkGroupStageReducer,
+  round16: getRound16Reducer,
   form: formReducer
   
 });

@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 import { store } from '../store';
 import { GetGroups } from '../actions';
 import { SendResult } from '../actions';
-import { Field, reduxForm } from 'redux-form'
+import { CheckGroupStage } from '../actions';
+import { Field, reduxForm } from 'redux-form';
 
-let Jogos= props => {
+let JogosPrimeiraFase= props => {
+
+  function submitGroupStage() {
+    store.dispatch(CheckGroupStage(props.jwt))
+  }
 
   function submitGame() {
     var jogo = store.getState().form.Jogos.active.substring(3);
@@ -52,8 +57,12 @@ let Jogos= props => {
               </form>
             </div>
           )}
+
         </div>
-        )}
+      )}
+        
+      <button onClick={submitGroupStage}>ENVIAR PALPITES</button>
+
     </div>
     )
   }
@@ -67,10 +76,10 @@ function mapStateToProps(state) {
   }
 }
 
-Jogos = reduxForm({
+JogosPrimeiraFase = reduxForm({
   form: 'Jogos'
-})(Jogos)
+})(JogosPrimeiraFase)
 
 export default connect(
   mapStateToProps
-)(Jogos);
+)(JogosPrimeiraFase);

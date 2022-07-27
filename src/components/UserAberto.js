@@ -10,11 +10,8 @@ function UserAberto(props) {
     store.dispatch(LogoutUser());
   }
 
-  var user = props.user;
-
   return (
     <div>
-      <h1>Olá, {user.nome}!</h1>
       <Bolão />
       <button onClick={logout}>Logout</button>
     </div>
@@ -25,7 +22,6 @@ function UserAberto(props) {
 
 function mapStateToProps(state) {
   return {
-    user: state.user,
     jwt: state.jwt,
   }
 }

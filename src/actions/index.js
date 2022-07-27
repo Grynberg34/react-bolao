@@ -144,3 +144,33 @@ export const GetGroupStandings = (token) => async dispatch => {
     })
 
 };
+
+export const CheckGroupStage = (token) => async dispatch => {
+
+    await api.get('/user/checar-grupos', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'CHECK_GROUPS', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const GetRound16 = (token) => async dispatch => {
+
+    await api.get('/user/oitavas', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'GET_ROUND16', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
