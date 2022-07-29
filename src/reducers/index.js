@@ -186,6 +186,16 @@ const getRound16Reducer = (playoffs = null, action) => {
   return playoffs;
 };
 
+const getRound8Reducer = (playoffs = null, action) => {
+  if (action.type === 'GET_ROUND8') {
+
+    return action.payload;
+    
+  }
+  
+  return playoffs;
+};
+
 export default combineReducers({
 
   jwt: userLogInReducer,
@@ -205,6 +215,7 @@ export default combineReducers({
   groupStandings: getGroupStandingsReducer,
   checkGroupStage: checkGroupStageReducer,
   round16: getRound16Reducer,
+  round8: getRound8Reducer,
   form: formReducer
   
 });

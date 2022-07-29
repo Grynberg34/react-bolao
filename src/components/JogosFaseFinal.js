@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import Oitavas from './Oitavas';
+import Quartas from './Quartas';
 
 let JogosFaseFinal= props => {
 
@@ -9,6 +10,7 @@ let JogosFaseFinal= props => {
   return (
     <div>
       <Oitavas />
+      <Quartas />
     </div>
   )
   

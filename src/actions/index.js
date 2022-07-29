@@ -160,6 +160,7 @@ export const CheckGroupStage = (token) => async dispatch => {
 
 };
 
+
 export const GetRound16 = (token) => async dispatch => {
 
     await api.get('/user/oitavas', {
@@ -168,6 +169,21 @@ export const GetRound16 = (token) => async dispatch => {
         }
     }).then(async function(response){
         dispatch({ type: 'GET_ROUND16', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const GetRound8 = (token) => async dispatch => {
+
+    await api.get('/user/quartas', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'GET_ROUND8', payload: response.data });
     })  
     .catch(function(err){
         console.log(err)
