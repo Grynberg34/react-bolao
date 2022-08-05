@@ -175,25 +175,74 @@ const checkGroupStageReducer = (groupsDone = false, action) => {
   return groupsDone;
 };
 
+const checkRound16Reducer = (round16Done = false, action) => {
+  if (action.type === 'CHECK_ROUND16') {
 
-const getRound16Reducer = (playoffs = null, action) => {
+    return action.payload;
+    
+  }
+  
+  return round16Done;
+};
+
+const checkRound8Reducer = (round8Done = false, action) => {
+  if (action.type === 'CHECK_ROUND8') {
+
+    return action.payload;
+    
+  }
+  
+  return round8Done;
+};
+
+const checkSemisReducer = (semisDone = false, action) => {
+  if (action.type === 'CHECK_SEMIS') {
+
+    return action.payload;
+    
+  }
+  
+  return semisDone;
+};
+
+const getRound16Reducer = (round16 = null, action) => {
   if (action.type === 'GET_ROUND16') {
 
     return action.payload;
     
   }
   
-  return playoffs;
+  return round16;
 };
 
-const getRound8Reducer = (playoffs = null, action) => {
+const getRound8Reducer = (round8 = null, action) => {
   if (action.type === 'GET_ROUND8') {
 
     return action.payload;
     
   }
   
-  return playoffs;
+  return round8;
+};
+
+const getSemisReducer = (semis = null, action) => {
+  if (action.type === 'GET_SEMIS') {
+
+    return action.payload;
+    
+  }
+  
+  return semis;
+};
+
+const getFinalsReducer = (finals = null, action) => {
+  if (action.type === 'GET_FINALS') {
+
+    return action.payload;
+    
+  }
+  
+  return finals;
 };
 
 export default combineReducers({
@@ -214,8 +263,13 @@ export default combineReducers({
   groups: getGroupsReducer,
   groupStandings: getGroupStandingsReducer,
   checkGroupStage: checkGroupStageReducer,
+  checkRound16: checkRound16Reducer,
+  checkRound8: checkRound8Reducer,
+  checkSemis: checkSemisReducer,
   round16: getRound16Reducer,
   round8: getRound8Reducer,
+  semis: getSemisReducer,
+  finals: getFinalsReducer,
   form: formReducer
   
 });

@@ -113,16 +113,18 @@ export const SendResult = (token, info) => async dispatch => {
           'Authorization': `Bearer ${token}` 
         }
     }).then(async function(){
-        await api.get('/user/classificacao', {
-            headers: {
-              'Authorization': `Bearer ${token}` 
-            }
-        }).then(function(response){
-            dispatch({ type: 'GET_GROUPSTANDINGS', payload: response.data });
-        })
-        .catch(function(err){
-            console.log(err)
-        })
+        if (info.fase === 'grupos') {
+            await api.get('/user/classificacao', {
+                headers: {
+                  'Authorization': `Bearer ${token}` 
+                }
+            }).then(function(response){
+                dispatch({ type: 'GET_GROUPSTANDINGS', payload: response.data });
+            })
+            .catch(function(err){
+                console.log(err)
+            })
+        }
     })
     .catch(function(err){
         console.log(err)
@@ -160,6 +162,65 @@ export const CheckGroupStage = (token) => async dispatch => {
 
 };
 
+export const CheckRound16 = (token) => async dispatch => {
+
+    await api.get('/user/checar-oitavas', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'CHECK_ROUND16', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const CheckRound8 = (token) => async dispatch => {
+
+    await api.get('/user/checar-quartas', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'CHECK_ROUND8', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const CheckSemis = (token) => async dispatch => {
+
+    await api.get('/user/checar-semis', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'CHECK_SEMIS', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const CheckFinals = (token) => async dispatch => {
+
+    await api.get('/user/checar-finais', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'CHECK_FINALS', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
 
 export const GetRound16 = (token) => async dispatch => {
 
@@ -184,6 +245,36 @@ export const GetRound8 = (token) => async dispatch => {
         }
     }).then(async function(response){
         dispatch({ type: 'GET_ROUND8', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const GetSemis = (token) => async dispatch => {
+
+    await api.get('/user/semis', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'GET_SEMIS', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const GetFinals = (token) => async dispatch => {
+
+    await api.get('/user/finais', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'GET_FINALS', payload: response.data });
     })  
     .catch(function(err){
         console.log(err)

@@ -22,7 +22,8 @@ let JogosPrimeiraFase= props => {
     var info = {
       id_jogo: jogo,
       s1_placar: s1_placar,
-      s2_placar: s2_placar
+      s2_placar: s2_placar,
+      fase: 'grupos'
     }
 
     if (s1_placar >= 0 && s2_placar >= 0) {
@@ -61,7 +62,7 @@ let JogosPrimeiraFase= props => {
         </div>
       )}
         
-      <button onClick={submitGroupStage}>ENVIAR PALPITES</button>
+      <button onClick={submitGroupStage}>Avançar para as oitavas</button>
 
     </div>
     )

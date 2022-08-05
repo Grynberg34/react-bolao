@@ -3,21 +3,21 @@ import { connect } from 'react-redux';
 import { store } from '../store';
 import { Field, reduxForm } from 'redux-form';
 import { SendResult } from '../actions';
-import { GetRound16 } from '../actions';
-import { CheckRound16 } from '../actions';
+import { GetSemis } from '../actions';
+import { CheckSemis } from '../actions';
 
-let Oitavas= props => {
+let Semis= props => {
 
-  function submitRound16() {
-    store.dispatch(CheckRound16(props.jwt))
+  function submitSemis() {
+    store.dispatch(CheckSemis(props.jwt))
   }
 
   function submitGame() {
-    var jogo = store.getState().form.Oitavas.active.substring(3);
+    var jogo = store.getState().form.Semis.active.substring(3);
     var s1 = 's1-' + jogo;
     var s2 = 's2-' + jogo;
-    var s1_placar = store.getState().form.Oitavas.values[s1];
-    var s2_placar = store.getState().form.Oitavas.values[s2];
+    var s1_placar = store.getState().form.Semis.values[s1];
+    var s2_placar = store.getState().form.Semis.values[s2];
 
     var info = {
       id_jogo: jogo,
@@ -30,7 +30,7 @@ let Oitavas= props => {
     if ((s1_placar >= 0 && s2_placar >= 0) && s1_placar === s2_placar) {
 
       var v = 'vd-' + jogo;
-      var vencedor_jogo = store.getState().form.Oitavas.values[v];
+      var vencedor_jogo = store.getState().form.Semis.values[v];
 
       if (vencedor_jogo !== undefined) {
         info.vencedor = vencedor_jogo;
@@ -46,10 +46,10 @@ let Oitavas= props => {
 
   }
 
-  var round16 = props.round16;
+  var semis = props.semis;
 
-  if (props.round16 === null) {
-    store.dispatch(GetRound16(props.jwt));
+  if (props.semis === null) {
+    store.dispatch(GetSemis(props.jwt))
 
     return (
       <div></div>
@@ -57,8 +57,8 @@ let Oitavas= props => {
   } else {
     return (
       <div>
-        <h1>Oitavas de Final</h1>
-        { round16.map( (match) => 
+        <h1>Semifinais</h1>
+        { semis.map( (match) => 
           <div key={match.id}>
             <form onChange={submitGame}>
               <div>
@@ -76,8 +76,7 @@ let Oitavas= props => {
             </form>
           </div>
         )}
-
-        <button onClick={submitRound16}>Avançar para as quartas</button>
+        <button onClick={submitSemis}>Avançar para a final</button>
       </div>
     )
   }
@@ -88,15 +87,15 @@ let Oitavas= props => {
   
 function mapStateToProps(state) {
   return {
-    round16: state.round16,
+    semis: state.semis,
     jwt: state.jwt
   }
 }
 
-Oitavas = reduxForm({
-  form: 'Oitavas'
-})(Oitavas)
+Semis = reduxForm({
+  form: 'Semis'
+})(Semis)
 
 export default connect(
   mapStateToProps
-)(Oitavas);
+)(Semis);
