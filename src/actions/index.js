@@ -214,6 +214,20 @@ export const CheckFinals = (token) => async dispatch => {
           'Authorization': `Bearer ${token}` 
         }
     }).then(async function(response){
+        
+        if (response.data === true) {
+            await api.get('/user/finalizar', {
+                headers: {
+                    'Authorization': `Bearer ${token}` 
+                }
+            }).then(async function(response){
+                dispatch({ type: 'CHECK_DONE', payload: response.data });
+            })  
+            .catch(function(err){
+                console.log(err)
+            })
+        }
+        
         dispatch({ type: 'CHECK_FINALS', payload: response.data });
     })  
     .catch(function(err){
@@ -276,6 +290,20 @@ export const GetFinals = (token) => async dispatch => {
     }).then(async function(response){
         dispatch({ type: 'GET_FINALS', payload: response.data });
     })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+
+export const SendAward = (token, award) => async dispatch => {
+
+    await api.post('/user/enviar-palpite-premio', award, {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    })
     .catch(function(err){
         console.log(err)
     })

@@ -6,7 +6,7 @@ function UserFechado(props) {
 
   return (
     <div>
-
+      <h1>Seu bolão</h1>
     </div>
   )
 

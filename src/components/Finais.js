@@ -5,11 +5,25 @@ import { Field, reduxForm } from 'redux-form';
 import { SendResult } from '../actions';
 import { GetFinals } from '../actions';
 import { CheckFinals } from '../actions';
+import { SendAward } from '../actions';
 
 let Finais= props => {
 
   function submitFinals() {
     store.dispatch(CheckFinals(props.jwt))
+  }
+
+  function submitAward() {
+
+    var prêmio = store.getState().form.Finais.active;
+
+    var award = {
+      id_prêmio: store.getState().form.Finais.active.substring(1),
+      ganhador: store.getState().form.Finais.values[prêmio]
+    }
+
+    store.dispatch(SendAward(props.jwt, award))
+
   }
 
   function submitGame() {
@@ -86,6 +100,16 @@ let Finais= props => {
               <option value={finals[1].s1_id}>{finals[1].s1.nome}</option>
               <option value={finals[1].s2_id}>{finals[1].s2.nome}</option>
             </Field>
+          </div>
+        </form>
+
+        <h1>Prêmios</h1>
+        <form onChange={submitAward}>
+          <div>
+            <label htmlFor="p1">Bola de Ouro</label>
+            <Field name="p1" component="input" type="text" />
+            <label htmlFor="p2">Chuteira de Ouro</label>
+            <Field name="p2" component="input" type="text" />
           </div>
         </form>
 

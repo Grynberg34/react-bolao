@@ -205,6 +205,16 @@ const checkSemisReducer = (semisDone = false, action) => {
   return semisDone;
 };
 
+const checkFinalsReducer = (finalsDone = false, action) => {
+  if (action.type === 'CHECK_FINALS') {
+
+    return action.payload;
+    
+  }
+  
+  return finalsDone;
+};
+
 const getRound16Reducer = (round16 = null, action) => {
   if (action.type === 'GET_ROUND16') {
 
@@ -266,6 +276,7 @@ export default combineReducers({
   checkRound16: checkRound16Reducer,
   checkRound8: checkRound8Reducer,
   checkSemis: checkSemisReducer,
+  checkFinals: checkFinalsReducer,
   round16: getRound16Reducer,
   round8: getRound8Reducer,
   semis: getSemisReducer,
