@@ -7,7 +7,7 @@ import reducers from './reducers';
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: ['jwt', 'form']
+    whitelist: ['form']
 }
    
 const persistedReducer = persistReducer(persistConfig, reducers)

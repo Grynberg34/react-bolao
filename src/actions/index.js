@@ -309,3 +309,18 @@ export const SendAward = (token, award) => async dispatch => {
     })
 
 };
+
+export const GetAllGuesses = (token) => async dispatch => {
+
+    await api.get('/user/mostrar-palpites', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'SHOW_ALL_GUESSES', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};

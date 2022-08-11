@@ -255,6 +255,16 @@ const getFinalsReducer = (finals = null, action) => {
   return finals;
 };
 
+const getAllGuessesReducer = (allGuesses = null, action) => {
+  if (action.type === 'SHOW_ALL_GUESSES') {
+
+    return action.payload;
+    
+  }
+  
+  return allGuesses;
+};
+
 export default combineReducers({
 
   jwt: userLogInReducer,
@@ -281,6 +291,7 @@ export default combineReducers({
   round8: getRound8Reducer,
   semis: getSemisReducer,
   finals: getFinalsReducer,
+  allGuesses: getAllGuessesReducer,
   form: formReducer
   
 });
