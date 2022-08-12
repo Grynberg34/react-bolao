@@ -30,7 +30,9 @@ let TodosPalpites= props => {
     
           { palpites[0].map( (match) => 
             <div key={match.id}>
-              <p>{match.Jogo.s1.nome} {match.s1_placar} x {match.s2_placar} {match.Jogo.s2.nome} </p>
+              <p>
+                {match.Jogo.s1.nome} {match.s1_placar} x {match.s2_placar} {match.Jogo.s2.nome}  {match.pontos > 0? <strong>({match.pontos})</strong>: null }
+              </p>
             </div>
           )}
         </div>
