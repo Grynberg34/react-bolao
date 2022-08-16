@@ -10,6 +10,11 @@ let CadastroForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+        <label htmlFor="nome">Nome</label>
+        <Field name="nome" component="input" type="text" />
+      </div>
+      <div></div>
+      <div>
         <label htmlFor="email">Email</label>
         <Field name="email" component="input" type="text" />
       </div>

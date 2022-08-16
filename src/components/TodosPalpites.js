@@ -2,8 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import { GetAllGuesses } from '../actions';
+import { LogoutUser } from '../actions';
 
 let TodosPalpites= props => {
+
+  function logout() {
+    store.dispatch(LogoutUser())
+  }
 
   var palpites = props.allGuesses;
 
@@ -84,6 +89,8 @@ let TodosPalpites= props => {
           </div>
 
         </div>
+
+        <button onClick={logout}>Logout</button>
   
       </div>
     )
