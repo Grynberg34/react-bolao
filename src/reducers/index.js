@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-
 //LOGIN
 
 const userLogInReducer = (jwt = null, action) => {
@@ -265,6 +264,27 @@ const getAllGuessesReducer = (allGuesses = null, action) => {
   return allGuesses;
 };
 
+const getRankingReducer = (ranking = null, action) => {
+  if (action.type === 'GET_RANKING') {
+
+    return action.payload;
+    
+  }
+  
+  return ranking;
+};
+
+const getGuessesByIdReducer = (guessesById = null, action) => {
+  if (action.type === 'SHOW_GUESSES_BY_ID') {
+
+    return action.payload;
+    
+  }
+  
+  return guessesById;
+};
+
+
 export default combineReducers({
 
   jwt: userLogInReducer,
@@ -292,6 +312,7 @@ export default combineReducers({
   semis: getSemisReducer,
   finals: getFinalsReducer,
   allGuesses: getAllGuessesReducer,
+  ranking: getRankingReducer,
+  guessesById: getGuessesByIdReducer,
   form: formReducer
-  
 });

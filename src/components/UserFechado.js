@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TodosPalpites from './TodosPalpites';
+import Menu from './Menu';
 
 function UserFechado(props) {
 
 
   return (
-    <TodosPalpites />
+    <div>
+      <Menu />
+      <TodosPalpites />
+    </div>
   )
 
 

@@ -1,14 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
-import { GetAllGuesses } from '../actions';
+import { GetGuessesById } from '../actions';
+import { useParams } from "react-router-dom";
 
-let TodosPalpites= props => {
+let RankingId= props => {
 
-  var palpites = props.allGuesses;
+  var { id } = useParams();
 
-  if (palpites === null) {
-    store.dispatch(GetAllGuesses(props.jwt))
+  var palpites = props.guessesById;
+  
+
+  if (palpites === null || parseInt(id) !== palpites[5].id) {
+    store.dispatch(GetGuessesById(props.jwt, id))
     return (
       <div></div>
     )
@@ -17,7 +21,8 @@ let TodosPalpites= props => {
       <div>
 
         <div>
-          <h1>Campeão: {palpites[5].Seleção.nome}</h1>
+          <h1>{palpites[5].nome}</h1>
+          <p>Campeão: {palpites[5].Seleção.nome}</p>
           <p>Bola de Ouro: {palpites[6][0].ganhador}</p>
           <p>Chuteira de Ouro: {palpites[6][1].ganhador}</p>
         </div>
@@ -104,11 +109,11 @@ let TodosPalpites= props => {
   
 function mapStateToProps(state) {
   return {
-    allGuesses: state.allGuesses,
+    guessesById: state.guessesById,
     jwt: state.jwt
   }
 }
 
 export default connect(
   mapStateToProps
-)(TodosPalpites);
+)(RankingId);

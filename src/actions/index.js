@@ -324,3 +324,33 @@ export const GetAllGuesses = (token) => async dispatch => {
     })
 
 };
+
+export const GetRanking = (token) => async dispatch => {
+
+    await api.get('/user/ranking', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'GET_RANKING', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+export const GetGuessesById = (token, id) => async dispatch => {
+
+    await api.get(`/user/ranking/${id}`, {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'SHOW_GUESSES_BY_ID', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
