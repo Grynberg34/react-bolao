@@ -7,8 +7,6 @@ let TodosPalpites= props => {
 
   var palpites = props.allGuesses;
 
-  console.log(palpites)
-
   if (palpites === null) {
     store.dispatch(GetAllGuesses(props.jwt))
     return (

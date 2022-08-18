@@ -9,7 +9,6 @@ let RankingId= props => {
   var { id } = useParams();
 
   var palpites = props.guessesById;
-  
 
   if (palpites === null || parseInt(id) !== palpites[5].id) {
     store.dispatch(GetGuessesById(props.jwt, id))
@@ -21,7 +20,8 @@ let RankingId= props => {
       <div>
 
         <div>
-          <h1>Campeão: {palpites[5].Seleção.nome}</h1>
+          <h1>{palpites[5].nome}</h1>
+          <h2>Campeão: {palpites[5].Seleção.nome}</h2>
           <p>Pontos Campeão: {palpites[7].campeão}</p>
           <p>Bola de Ouro: {palpites[6][0].ganhador}</p>
           <p>Chuteira de Ouro: {palpites[6][1].ganhador}</p>
