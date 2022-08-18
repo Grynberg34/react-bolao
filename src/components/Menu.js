@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
-import { Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -17,8 +17,12 @@ function Menu(props) {
   return (
     <Container>
       <Row>
-        <Col md={4}>
-          <h1>{props.user.nome}</h1>
+        <Col md={2}>
+          <Link to="/">Home</Link>
+        </Col>
+
+        <Col md={2}>
+          <p>{props.user.nome}</p>
         </Col>
 
         <Col md={2}>

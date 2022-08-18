@@ -284,6 +284,26 @@ const getGuessesByIdReducer = (guessesById = null, action) => {
   return guessesById;
 };
 
+const getAllMatchesReducer = (allMatches = null, action) => {
+  if (action.type === 'GET_ALL_MATCHES') {
+
+    return action.payload;
+    
+  }
+  
+  return allMatches;
+};
+
+const GetMatchByIdReducer = (match = null, action) => {
+  if (action.type === 'GET_MATCH_BY_ID') {
+
+    return action.payload;
+    
+  }
+  
+  return match;
+};
+
 
 export default combineReducers({
 
@@ -314,5 +334,7 @@ export default combineReducers({
   allGuesses: getAllGuessesReducer,
   ranking: getRankingReducer,
   guessesById: getGuessesByIdReducer,
+  allMatches: getAllMatchesReducer,
+  match: GetMatchByIdReducer,
   form: formReducer
 });

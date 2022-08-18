@@ -354,3 +354,48 @@ export const GetGuessesById = (token, id) => async dispatch => {
     })
 
 };
+
+export const GetAllMatches = (token) => async dispatch => {
+
+    await api.get('/user/todos-jogos', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'GET_ALL_MATCHES', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+
+export const GetMatchById = (token, id) => async dispatch => {
+
+    if (id < 49) {
+        await api.get(`/user/todos-jogos/grupos/${id}`, {
+            headers: {
+              'Authorization': `Bearer ${token}` 
+            }
+        }).then(async function(response){
+            dispatch({ type: 'GET_MATCH_BY_ID', payload: response.data });
+        })  
+        .catch(function(err){
+            console.log(err)
+        })
+    } else {
+        await api.get(`/user/todos-jogos/fase-final/${id}`, {
+            headers: {
+              'Authorization': `Bearer ${token}` 
+            }
+        }).then(async function(response){
+            dispatch({ type: 'GET_MATCH_BY_ID', payload: response.data });
+        })  
+        .catch(function(err){
+            console.log(err)
+        })
+    }
+
+
+};

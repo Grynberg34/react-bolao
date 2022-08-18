@@ -9,6 +9,9 @@ import Redefinir from './components/Redefinir';
 import User from './components/User';
 import UserRanking from './components/UserRanking';
 import UserRankingId from './components/UserRankingId';
+import UserJogos from './components/UserJogos';
+import UserJogoId from './components/UserJogoId';
+import UserRegras from './components/UserRegras';
 import {store, persistor} from './store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,8 +30,9 @@ ReactDOM.render(
           <Route path="user" element={<User />}></Route>
           <Route path="user/ranking" element={<UserRanking />}></Route>
           <Route path="user/ranking/:id" element={<UserRankingId />}></Route>
-          <Route path="user/jogos" element={<User />}></Route>
-          <Route path="user/regras" element={<User />}></Route>
+          <Route path="user/jogos" element={<UserJogos />}></Route>
+          <Route path="user/jogos/:id" element={<UserJogoId />}></Route>
+          <Route path="user/regras" element={<UserRegras />}></Route>
         </Routes>
       </BrowserRouter>
     </PersistGate>
