@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import { GetGroups } from '../actions';
@@ -8,9 +8,22 @@ import { Field, reduxForm } from 'redux-form';
 
 let JogosPrimeiraFase= props => {
 
-  function submitGroupStage() {
-    store.dispatch(CheckGroupStage(props.jwt))
+  const [msg, setMsg] = useState(false);
+
+  async function submitGroupStage() {
+    await store.dispatch(CheckGroupStage(props.jwt))
+
+    console.log(props.checkGroupStage)
+    
+    if (props.checkGroupStage === false) {
+      setMsg(true);
+    }
   }
+
+  useEffect(() => {
+    return () => {};
+  }, 
+  []); 
 
   function submitGame() {
     var jogo = store.getState().form.Jogos.active.substring(3);
@@ -61,6 +74,8 @@ let JogosPrimeiraFase= props => {
 
         </div>
       )}
+
+      {msg === true? <h4>Preencha todos os jogos para avançar</h4>: null }
       
       <button onClick={submitGroupStage}>Avançar para as oitavas</button>
 
@@ -73,6 +88,7 @@ let JogosPrimeiraFase= props => {
 function mapStateToProps(state) {
   return {
     groups: state.groups,
+    checkGroupStage : state.checkGroupStage,
     jwt: state.jwt
   }
 }

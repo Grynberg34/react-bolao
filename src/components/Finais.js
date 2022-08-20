@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import { Field, reduxForm } from 'redux-form';
@@ -9,9 +9,20 @@ import { SendAward } from '../actions';
 
 let Finais= props => {
 
-  function submitFinals() {
-    store.dispatch(CheckFinals(props.jwt))
+  const [msg, setMsg] = useState(false);
+
+  async function submitFinals() {
+    await store.dispatch(CheckFinals(props.jwt))
+
+    if (props.checkFinals === false) {
+      setMsg(true);
+    }
   }
+
+  useEffect(() => {
+    return () => {};
+  }, 
+  []); 
 
   function submitAward() {
 
@@ -113,6 +124,8 @@ let Finais= props => {
           </div>
         </form>
 
+        {msg === true? <h4>Preencha todos os jogos e prêmios para avançar</h4>: null }
+
         <button onClick={submitFinals}>Finalizar bolão</button>
       </div>
     )
@@ -125,6 +138,7 @@ let Finais= props => {
 function mapStateToProps(state) {
   return {
     finals: state.finals,
+    checkFinals: state.checkFinals,
     jwt: state.jwt
   }
 }

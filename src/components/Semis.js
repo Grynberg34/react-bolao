@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import { Field, reduxForm } from 'redux-form';
@@ -8,9 +8,20 @@ import { CheckSemis } from '../actions';
 
 let Semis= props => {
 
-  function submitSemis() {
-    store.dispatch(CheckSemis(props.jwt))
+  const [msg, setMsg] = useState(false);
+
+  async function submitSemis() {
+    await store.dispatch(CheckSemis(props.jwt))
+
+    if (props.checkSemis === false) {
+      setMsg(true);
+    }
   }
+
+  useEffect(() => {
+    return () => {};
+  }, 
+  []); 
 
   function submitGame() {
     var jogo = store.getState().form.Semis.active.substring(3);
@@ -76,6 +87,9 @@ let Semis= props => {
             </form>
           </div>
         )}
+
+        {msg === true? <h4>Preencha todos os jogos para avançar</h4>: null }
+
         <button onClick={submitSemis}>Avançar para a final</button>
       </div>
     )
@@ -88,6 +102,7 @@ let Semis= props => {
 function mapStateToProps(state) {
   return {
     semis: state.semis,
+    checkSemis: state.checkSemis,
     jwt: state.jwt
   }
 }

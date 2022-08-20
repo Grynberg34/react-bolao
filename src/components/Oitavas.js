@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store';
 import { Field, reduxForm } from 'redux-form';
@@ -8,9 +8,20 @@ import { CheckRound16 } from '../actions';
 
 let Oitavas= props => {
 
-  function submitRound16() {
-    store.dispatch(CheckRound16(props.jwt))
+  const [msg, setMsg] = useState(false);
+
+  async function submitRound16() {
+    await store.dispatch(CheckRound16(props.jwt))
+    
+    if (props.checkRound16 === false) {
+      setMsg(true);
+    }
   }
+
+  useEffect(() => {
+    return () => {};
+  }, 
+  []);  
 
   function submitGame() {
     var jogo = store.getState().form.Oitavas.active.substring(3);
@@ -77,6 +88,8 @@ let Oitavas= props => {
           </div>
         )}
 
+        {msg === true? <h4>Preencha todos os jogos para avançar</h4>: null }
+
         <button onClick={submitRound16}>Avançar para as quartas</button>
       </div>
     )
@@ -89,7 +102,8 @@ let Oitavas= props => {
 function mapStateToProps(state) {
   return {
     round16: state.round16,
-    jwt: state.jwt
+    jwt: state.jwt,
+    checkRound16: state.checkRound16,
   }
 }
 
