@@ -61,7 +61,7 @@ let JogosPrimeiraFase= props => {
 
         </div>
       )}
-        
+      
       <button onClick={submitGroupStage}>Avançar para as oitavas</button>
 
     </div>

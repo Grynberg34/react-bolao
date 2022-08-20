@@ -26,18 +26,22 @@ let JogosFaseFinal= props => {
   if (checkFinals === true ) {
     <Navigate to="/user" />
   } else if (checkSemis === true) {
+    window.localStorage.clear();
     return (
       <Finais />
     )
   } else if (checkRound8 === true) {
+    window.localStorage.clear();
     return (
       <Semis />
     )
   } else if (checkRound16 === true) {
+    window.localStorage.clear();
     return (
       <Quartas />
     )
   } else {
+    window.localStorage.clear();
     return (
       <Oitavas />
     )

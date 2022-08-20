@@ -17,6 +17,8 @@ function Bolão(props) {
 
   if (checkGroupStage === true) {
 
+    window.localStorage.clear();
+
     return (
       <div>
         <JogosFaseFinal />
