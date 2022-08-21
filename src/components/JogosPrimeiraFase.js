@@ -65,8 +65,9 @@ let JogosPrimeiraFase= props => {
                 <div>
                   <label htmlFor={'s1-' + match.id}>{match.s1.nome}</label>
                   <Field min='0' name={'s1-' + match.id} component="input" type="number" />
-                  <label htmlFor={'s2-' + match.id}>{match.s2.nome}</label>
+                  <span> x </span>
                   <Field min='0' name={'s2-' + match.id} component="input" type="number" />
+                  <label htmlFor={'s2-' + match.id}>{match.s2.nome}</label>
                 </div>
               </form>
             </div>
