@@ -1,0 +1,29 @@
+.content {
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.logo {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7.5vw;
+    margin-bottom: 2vw;
+}
+
+.menu {
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2vw;
+    padding-top: 4vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40%;
+}

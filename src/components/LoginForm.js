@@ -8,16 +8,16 @@ let LoginForm = props => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="text" />
+    <form className="login-form" onSubmit={handleSubmit}>
+      <div className="login-form__section">
+        <label className="login-form__section__label" htmlFor="email">Email</label>
+        <Field className="login-form__section__input" name="email" component="input" type="text" />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <Field name="password" component="input" type="password" />
+      <div className="login-form__section">
+        <label className="login-form__section__label" htmlFor="password">Senha</label>
+        <Field className="login-form__section__input" name="password" component="input" type="password" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="login-form__button" type="submit">Login</button>
     </form>
   )
 }

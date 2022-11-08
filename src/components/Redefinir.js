@@ -7,6 +7,10 @@ import { connect } from 'react-redux';
 import { CheckAuth } from '../actions';
 import { store } from '../store';
 import { Link, Navigate } from "react-router-dom";
+import "../scss/redefinir.scss";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Redefinir(props) {
 
@@ -38,26 +42,58 @@ function Redefinir(props) {
     )
   } else if (newpass === true) {
     return (
-      <div>
-        <h1>Senha alterada com sucesso</h1>
-        <Link to="/login">Login</Link>
+      <div className="redefinir" style={{backgroundImage: `url('/home/background.png')`}}>
+
+        <Container>
+          <Row>
+            <Col md={4}></Col>
+            <Col md={4}>
+              <div>
+                <Link to="/"><img className="logo" src="/logo.svg" alt="" /></Link>
+                <h1 id="senha">Senha alterada com sucesso</h1>
+                <Link id="senha-link" to="/login">Login</Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
     </div>
     )
   } else if (redefine === true){
     return (
-      <div>
-        <span id={props.newpass.toString()}></span>
-        <h1>{props.failNewpass}</h1>
-        <NovaSenhaForm   onSubmit={submitNewPassword}  />
+      <div className="redefinir" style={{backgroundImage: `url('/home/background.png')`}}>
+
+        <Container>
+          <Row>
+            <Col md={4}></Col>
+            <Col md={4}>
+              <div>
+                <Link to="/"><img className="logo" src="/logo.svg" alt="" /></Link>
+                <span id={props.newpass.toString()}></span>
+                <h1>{props.failNewpass}</h1>
+                <NovaSenhaForm   onSubmit={submitNewPassword}  />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     )
 
   } else {
 
     return (
-      <div>
-        <h1>{props.failRedefine}</h1>
-        <RedefinirForm onSubmit={submitEmail} />
+      <div className="redefinir" style={{backgroundImage: `url('/home/background.png')`}}>
+        <Container>
+          <Row>
+            <Col md={4}></Col>
+            <Col md={4}>
+              <div>
+                <Link to="/"><img className="logo" src="/logo.svg" alt="" /></Link>
+                <h1>{props.failRedefine}</h1>
+                <RedefinirForm onSubmit={submitEmail} />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     )
   }

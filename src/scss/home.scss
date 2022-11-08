@@ -1,0 +1,17 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+@import '../scss/menu.scss';
+
+
+.menu {
+
+    .menu__link {
+        display: block;
+        margin-bottom: 2vw;
+        color: $branco;
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+        
+    }
+}

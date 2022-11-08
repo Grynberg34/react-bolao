@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import { CheckAuth } from '../actions';
 import { store } from '../store';
 import { Navigate } from "react-router-dom";
+import "../scss/home.scss";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App(props) {
 
@@ -20,10 +24,20 @@ function App(props) {
   } else {
     return (
       <div>
-        <h1>Bolão da Copa</h1>
-        <Link to="cadastro">Cadastro</Link>
-        <br></br>
-        <Link to="login">Login</Link>
+        <div className="content" style={{backgroundImage: `url('/home/background.png')`}}>
+          <Container>
+            <Row>
+              <Col md={4}></Col>
+              <Col md={4}>
+                <Link to="/"><img className="logo" src="/logo.svg" alt="" /></Link>
+                <div className="menu" style={{backgroundImage: `url('/home/box.png')`}}>
+                  <Link className="menu__link" to="cadastro">Cadastro</Link>
+                  <Link className="menu__link" to="login">Login</Link>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
     );
   }

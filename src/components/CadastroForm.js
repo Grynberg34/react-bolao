@@ -8,25 +8,24 @@ let CadastroForm = props => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nome">Nome</label>
-        <Field name="nome" component="input" type="text" />
+    <form className="cadastro-form" onSubmit={handleSubmit}>
+      <div className="cadastro-form__section">
+        <label className="cadastro-form__section__label" htmlFor="nome">Nome</label>
+        <Field className="cadastro-form__section__input" name="nome" component="input" type="text" />
       </div>
-      <div></div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="text" />
+      <div className="cadastro-form__section">
+        <label className="cadastro-form__section__label" htmlFor="email">Email</label>
+        <Field className="cadastro-form__section__input" name="email" component="input" type="text" />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <Field name="password" component="input" type="password" />
+      <div className="cadastro-form__section">
+        <label className="cadastro-form__section__label" htmlFor="password">Senha</label>
+        <Field className="cadastro-form__section__input" name="password" component="input" type="password" />
       </div>
-      <div>
-        <label htmlFor="repeatpassword">Repeat Password</label>
-        <Field name="repeatpassword" component="input" type="password" />
+      <div className="cadastro-form__section">
+        <label className="cadastro-form__section__label" htmlFor="repeatpassword">Repetir senha</label>
+        <Field className="cadastro-form__section__input" name="repeatpassword" component="input" type="password" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="cadastro-form__button" type="submit">Cadastrar</button>
     </form>
   )
 }

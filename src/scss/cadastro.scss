@@ -1,0 +1,93 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+@import '../scss/menu.scss';
+
+#cadastro {
+    height: 120vh;
+
+    .logo {
+        margin-top: 7.5vw;
+        width: 60%;
+    }
+}
+
+.cadastro-form {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .cadastro-form__section {
+        .cadastro-form__section__label {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 0.5vw;
+            color: $preto;
+        }
+
+        .cadastro-form__section__input {
+            display: block;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0.5vw;
+            font-size: 12px;
+        }
+
+    }
+
+    .cadastro-form__button {
+        display: block;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        padding: 1vw;
+        margin-top: 2vw;
+        color: $preto;
+        background-color: $laranja;
+        outline: none;
+        border: none;
+        margin-bottom: 1vw;
+    }
+}
+
+.google {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    padding: 1vw;
+    margin-top: 2vw;
+    color: $preto;
+    background-color: $branco;
+    outline: none;
+    border: none;
+    margin-bottom: 1vw;
+
+    .google__img {
+        display: inline-block;
+        width: 7%;
+        margin-right: 0.5vw;
+    }
+}
+
+.cadastro {
+
+    .cadastro__link {
+        display: block;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 12px;
+        padding: 0.5vw;
+        margin-top: 1vw;
+        color: $preto;
+        background-color: $branco;
+        text-align: center;
+        text-decoration: none;
+        margin-bottom: 1vw;
+    }
+}
