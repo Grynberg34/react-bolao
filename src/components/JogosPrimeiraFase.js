@@ -5,6 +5,7 @@ import { GetGroups } from '../actions';
 import { SendResult } from '../actions';
 import { CheckGroupStage } from '../actions';
 import { Field, reduxForm } from 'redux-form';
+import "../scss/jogos-pf.scss";
 
 let JogosPrimeiraFase= props => {
 
@@ -57,17 +58,17 @@ let JogosPrimeiraFase= props => {
     return (
       <div>
         { groups.map( (group) => 
-        <div key={group.jogos[0].s1.grupo}>
-          <h2>Grupo {group.jogos[0].s1.grupo}</h2>
+        <div className="grupo" key={group.jogos[0].s1.grupo}>
+          <h2 className="grupo__title">Grupo {group.jogos[0].s1.grupo}</h2>
           { group.jogos.map( (match) => 
-            <div key={match.id}>
+            <div className="grupo__jogo" key={match.id}>
               <form onChange={submitGame}>
                 <div>
-                  <label htmlFor={'s1-' + match.id}>{match.s1.nome}</label>
-                  <Field min='0' name={'s1-' + match.id} component="input" type="number" />
-                  <span> x </span>
-                  <Field min='0' name={'s2-' + match.id} component="input" type="number" />
-                  <label htmlFor={'s2-' + match.id}>{match.s2.nome}</label>
+                  <label className="grupo__jogo__label" htmlFor={'s1-' + match.id}> <img className="grupo__jogo__img" src={match.s1.img} alt="" /></label>
+                  <Field className="grupo__jogo__input" min='0' name={'s1-' + match.id} component="input" type="number" />
+                  <span className="grupo__jogo__vs"> x </span>
+                  <Field className="grupo__jogo__input" min='0' name={'s2-' + match.id} component="input" type="number" />
+                  <label className="grupo__jogo__label--right" htmlFor={'s2-' + match.id}><img className="grupo__jogo__img" src={match.s2.img} alt="" /></label>
                 </div>
               </form>
             </div>
@@ -76,9 +77,9 @@ let JogosPrimeiraFase= props => {
         </div>
       )}
 
-      {msg === true? <h4>Preencha todos os jogos para avançar</h4>: null }
+      {msg === true? <h4 className="content__msg">Preencha todos os jogos para avançar</h4>: null }
       
-      <button onClick={submitGroupStage}>Avançar para as oitavas</button>
+      <button className="content__button" onClick={submitGroupStage}>Avançar para as oitavas</button>
 
     </div>
     )

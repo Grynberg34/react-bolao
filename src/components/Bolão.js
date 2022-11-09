@@ -27,16 +27,21 @@ function Bolão(props) {
 
   } else {
     return (
-      <Container>
-        <Row>
-          <Col md={6}>
-            <JogosPrimeiraFase />
-          </Col>
-          <Col md={6}>
-            <Grupos />
-          </Col>
-        </Row>
-      </Container>
+      <div id="primeirafase">
+        <div className="content" style={{backgroundImage: `url('/user/background.png')`}}>
+          <Container>
+            <h1 id="palpites-title">Preencha com seus palpites</h1>
+            <Row>
+              <Col md={6}>
+                <JogosPrimeiraFase />
+              </Col>
+              <Col md={6}>
+                <Grupos />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
     )
   }
 

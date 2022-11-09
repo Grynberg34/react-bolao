@@ -5,6 +5,8 @@ import { Field, reduxForm } from 'redux-form';
 import { SendResult } from '../actions';
 import { GetSemis } from '../actions';
 import { CheckSemis } from '../actions';
+import Container from 'react-bootstrap/Container';
+import "../scss/fasefinal.scss";
 
 let Semis= props => {
 
@@ -67,30 +69,39 @@ let Semis= props => {
     )
   } else {
     return (
-      <div>
-        <h1>Semifinais</h1>
-        { semis.map( (match) => 
-          <div key={match.id}>
-            <form onChange={submitGame}>
-              <div>
-                <label htmlFor={'s1-' + match.jogoId}>{match.s1.nome}</label>
-                <Field min='0' name={'s1-' + match.jogoId} component="input" type="number" />
-                <label htmlFor={'s2-' + match.jogoId}>{match.s2.nome}</label>
-                <Field min='0' name={'s2-' + match.jogoId} component="input" type="number" />
-                <label htmlFor={"vd-" + match.jogoId}>Vencedor (em caso de empate)</label>
-                <Field name={"vd-" + match.jogoId} component="select">
-                  <option disabled></option>
-                  <option value={match.s1_id}>{match.s1.nome}</option>
-                  <option value={match.s2_id}>{match.s2.nome}</option>
-                </Field>
-              </div>
-            </form>
-          </div>
-        )}
+      <div id="fasefinal">
+        <div className="content" style={{backgroundImage: `url('/user/background.png')`}}>
+          <Container>
+            <div className="fasefinal">
+              <h1 className="fasefinal__title">Semifinais</h1>
+              { semis.map( (match) => 
+                <div className="fasefinal__jogo" key={match.id}>
+                  <form onChange={submitGame}>
+                    <div>
+                      <label className="fasefinal__jogo__label" htmlFor={'s1-' + match.jogoId}><img className="fasefinal__jogo__img" src={match.s1.img} alt="" /></label>
+                      <Field className="fasefinal__jogo__input" min='0' name={'s1-' + match.jogoId} component="input" type="number" />
+                      <span className="fasefinal__jogo__vs"> x </span>
+                      <Field className="fasefinal__jogo__input" min='0' name={'s2-' + match.jogoId} component="input" type="number" />
+                      <label className="fasefinal__jogo__label--right" htmlFor={'s2-' + match.jogoId}><img className="fasefinal__jogo__img" src={match.s2.img} alt="" /></label>
+                      <div className="fasefinal__jogo__vencedor">
+                        <label className="fasefinal__jogo__vencedor__label" htmlFor={"vd-" + match.jogoId}>Vencedor (em caso de empate)</label>
+                        <Field className="fasefinal__jogo__vencedor__input" name={"vd-" + match.jogoId} component="select">
+                          <option disabled></option>
+                          <option value={match.s1_id}>{match.s1.nome}</option>
+                          <option value={match.s2_id}>{match.s2.nome}</option>
+                        </Field>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              )}
 
-        {msg === true? <h4>Preencha todos os jogos para avançar</h4>: null }
+              {msg === true? <h4 className="fasefinal__msg">Preencha todos os jogos para avançar</h4>: null }
 
-        <button onClick={submitSemis}>Avançar para a final</button>
+              <button className="fasefinal__button" onClick={submitSemis}>Avançar para a final</button>
+            </div>
+          </Container>
+        </div>
       </div>
     )
   }

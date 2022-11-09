@@ -17,14 +17,15 @@ let Grupos= props => {
     return (
       <div>
         { groupStandings.map( (group) =>
-          <div key={group.letra}>
-            <h1>Grupo {group.letra}</h1>
-            {
-              group.classificacao.map( (seleção, index) =>
-              <div key={seleção.nome}>
-                <p>{index+1}.  {seleção.nome} P: {seleção.pontos}, S: {seleção.saldo}, GP: {seleção.golsPro}, GC: {seleção.golsContra}</p>
-              </div>) 
-            }
+          <div className="classificacao" key={group.letra}>
+            <div className="classificacao__box">
+              {
+                group.classificacao.map( (seleção, index) =>
+                <div className="classificacao__box__nome" key={seleção.nome}>
+                  <p className="classificacao__box__text"> <span className="classificacao__box__index"> {index+1}°</span> <img className="classificacao__box__img" src={seleção.img} alt="" /> <span className="classificacao__box__laranja">P: {seleção.pontos}</span> | S: {seleção.saldo} | GP: {seleção.golsPro} | GC: {seleção.golsContra}</p>
+                </div>) 
+              }
+            </div>
             
           </div>
           )

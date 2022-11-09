@@ -6,6 +6,8 @@ import { SendResult } from '../actions';
 import { GetFinals } from '../actions';
 import { CheckFinals } from '../actions';
 import { SendAward } from '../actions';
+import Container from 'react-bootstrap/Container';
+import "../scss/finais.scss";
 
 let Finais= props => {
 
@@ -81,52 +83,68 @@ let Finais= props => {
     )
   } else {
     return (
-      <div>
-        <h1>Disputa do terceiro lugar</h1>
-        <form onChange={submitGame}>
-          <div>
-            <label htmlFor={'s1-' + finals[0].jogoId}>{finals[0].s1.nome}</label>
-            <Field min='0' name={'s1-' + finals[0].jogoId} component="input" type="number" />
-            <label htmlFor={'s2-' + finals[0].jogoId}>{finals[0].s2.nome}</label>
-            <Field min='0' name={'s2-' + finals[0].jogoId} component="input" type="number" />
-            <label htmlFor={"vd-" + finals[0].jogoId}>Vencedor (em caso de empate)</label>
-            <Field name={"vd-" + finals[0].jogoId} component="select">
-              <option disabled></option>
-              <option value={finals[0].s1_id}>{finals[0].s1.nome}</option>
-              <option value={finals[0].s2_id}>{finals[0].s2.nome}</option>
-            </Field>
-          </div>
-        </form>
+      <div id="fasefinal">
+        <div className="content" style={{backgroundImage: `url('/user/background.png')`}}>
+          <Container>
+            <div className="fasefinal">
+              <h1 className="fasefinal__title">Disputa do terceiro lugar</h1>
+              <div className="fasefinal__jogo">
+                <form onChange={submitGame}>
+                  <div>
+                    <label className="fasefinal__jogo__label" htmlFor={'s1-' + finals[0].jogoId}><img className="fasefinal__jogo__img" src={finals[0].s1.img} alt="" /></label>
+                    <Field className="fasefinal__jogo__input" min='0' name={'s1-' + finals[0].jogoId} component="input" type="number" />
+                    <span className="fasefinal__jogo__vs"> x </span>
+                    <Field className="fasefinal__jogo__input" min='0' name={'s2-' + finals[0].jogoId} component="input" type="number" />
+                    <label className="fasefinal__jogo__label--right" htmlFor={'s2-' + finals[0].jogoId}><img className="fasefinal__jogo__img" src={finals[0].s2.img} alt="" /></label>
+                    <div className="fasefinal__jogo__vencedor">
+                      <label className="fasefinal__jogo__vencedor__label" htmlFor={"vd-" + finals[0].jogoId}>Vencedor (em caso de empate)</label>
+                      <Field className="fasefinal__jogo__vencedor__input" name={"vd-" + finals[0].jogoId} component="select">
+                        <option disabled></option>
+                        <option value={finals[0].s1_id}>{finals[0].s1.nome}</option>
+                        <option value={finals[0].s2_id}>{finals[0].s2.nome}</option>
+                      </Field>
+                    </div>
+                  </div>
+                </form>
+              </div>
 
-        <h1>Final</h1>
-        <form onChange={submitGame}>
-          <div>
-            <label htmlFor={'s1-' + finals[1].jogoId}>{finals[1].s1.nome}</label>
-            <Field min='0' name={'s1-' + finals[1].jogoId} component="input" type="number" />
-            <label htmlFor={'s2-' + finals[1].jogoId}>{finals[1].s2.nome}</label>
-            <Field min='0' name={'s2-' + finals[1].jogoId} component="input" type="number" />
-            <label htmlFor={"vd-" + finals[1].jogoId}>Vencedor (em caso de empate)</label>
-            <Field name={"vd-" + finals[1].jogoId} component="select">
-              <option disabled></option>
-              <option value={finals[1].s1_id}>{finals[1].s1.nome}</option>
-              <option value={finals[1].s2_id}>{finals[1].s2.nome}</option>
-            </Field>
-          </div>
-        </form>
+              <h1 className="fasefinal__title">Final</h1>
+              <div className="fasefinal__jogo">
+                <form onChange={submitGame}>
+                  <div>
+                    <label className="fasefinal__jogo__label" htmlFor={'s1-' + finals[1].jogoId}><img className="fasefinal__jogo__img" src={finals[1].s1.img} alt="" /></label>
+                    <Field className="fasefinal__jogo__input" min='0' name={'s1-' + finals[1].jogoId} component="input" type="number" />
+                    <span className="fasefinal__jogo__vs"> x </span>
+                    <Field className="fasefinal__jogo__input" min='0' name={'s2-' + finals[1].jogoId} component="input" type="number" />
+                    <label className="fasefinal__jogo__label--right" htmlFor={'s2-' + finals[1].jogoId}><img className="fasefinal__jogo__img" src={finals[1].s2.img} alt="" /></label>
+                    <div className="fasefinal__jogo__vencedor">
+                      <label className="fasefinal__jogo__vencedor__label" htmlFor={"vd-" + finals[1].jogoId}>Vencedor (em caso de empate)</label>
+                      <Field className="fasefinal__jogo__vencedor__input" name={"vd-" + finals[1].jogoId} component="select">
+                        <option disabled></option>
+                        <option value={finals[1].s1_id}>{finals[1].s1.nome}</option>
+                        <option value={finals[1].s2_id}>{finals[1].s2.nome}</option>
+                      </Field>
+                    </div>
+                  </div>
+                </form>
+              </div>
 
-        <h1>Prêmios</h1>
-        <form onChange={submitAward}>
-          <div>
-            <label htmlFor="p1">Bola de Ouro</label>
-            <Field name="p1" component="input" type="text" />
-            <label htmlFor="p2">Chuteira de Ouro</label>
-            <Field name="p2" component="input" type="text" />
-          </div>
-        </form>
+              <h1 className="fasefinal__title">Prêmios</h1>
+              <form onChange={submitAward}>
+                <div className="fasefinal__premios">
+                  <label className="fasefinal__premios__label" htmlFor="p1">Bola de Ouro</label>
+                  <Field className="fasefinal__premios__input" name="p1" component="input" type="text" />
+                  <label className="fasefinal__premios__label" htmlFor="p2">Chuteira de Ouro</label>
+                  <Field className="fasefinal__premios__input" name="p2" component="input" type="text" />
+                </div>
+              </form>
 
-        {msg === true? <h4>Preencha todos os jogos e prêmios para avançar</h4>: null }
+              {msg === true? <h4 className="fasefinal__msg">Preencha todos os jogos e prêmios para avançar</h4>: null }
 
-        <button onClick={submitFinals}>Finalizar bolão</button>
+              <button className="fasefinal__button" onClick={submitFinals}>Finalizar bolão</button>
+            </div>
+          </Container>
+        </div>
       </div>
     )
   }

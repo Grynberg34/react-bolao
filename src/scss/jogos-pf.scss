@@ -1,0 +1,199 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+#primeirafase {
+    .content {
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: unset;
+        padding-top: 10vw;
+    
+        .content__button {
+            display: block;
+            width: 75%;
+            margin-right: auto;
+            font-size: 18px;
+            padding: 0.5vw;
+            margin-top: 1vw;
+            color: $branco;
+            background-color: $vermelho;
+            outline: none;
+            border: none;
+            margin-bottom: 6vw;
+            margin-right: auto;
+            margin-left: 6vw;
+        }
+
+        .content__msg {
+            font-size: 16px;
+            color: $vermelho;
+            margin-bottom: 2vw;
+            margin-left: 6vw;
+        }
+    }
+}
+
+#palpites-title {
+    color: $preto;
+    font-size: 40px;
+    color: $vermelho;
+    text-align: center;
+    margin-bottom: 6vw;
+
+}
+
+.grupo {
+    padding: 2vw;
+    border: 2px solid $vermelho;
+    margin-bottom: 6vw;
+    margin-left: 6vw;
+    background-color: rgba($vermelho, 0.2);
+    height: 32vw;
+
+    .grupo__title {
+        font-size: 24px;
+        color: $vermelho;
+        margin-bottom: 2vw;
+    }
+
+    .grupo__jogo {
+        position: relative;
+        margin-bottom: 2vw;
+
+        .grupo__jogo__img {
+            width: 10%;
+        }
+
+        .grupo__jogo__label {
+            display: inline;
+            margin-right: 1vw;
+        }
+
+        .grupo__jogo__label--right {
+            display: inline;
+            margin-left: 1vw;
+        }
+
+
+        .grupo__jogo__input {
+            width: 10%;
+            border: 2px solid $vermelho;
+            text-align: center;
+
+            &:focus {
+                border: 2px solid $vermelho;
+                outline: none;
+            }
+        }
+
+        .grupo__jogo__vs {
+            color: $vermelho;
+            font-size: 16px;
+        }
+    }
+}
+
+
+.classificacao {
+    height: 32vw;
+    margin-bottom: 6vw;
+
+    .classificacao__box {
+        height: 17vw;
+        padding: 2vw;
+        background-color: rgba($laranja, 0.2);
+        margin-right: 8vw;
+        border: 2px solid $laranja;
+
+
+
+        .classificacao__box__img {
+            display: inline-block;
+            width: 7.5%;
+            margin-right: 1vw;
+        }
+
+        .classificacao__box__index {
+            color: $preto;
+            margin-right: 1vw;
+        }
+
+        .classificacao__box__text {
+            font-size: 16px;
+            color: $laranja;
+            margin-bottom: 2vw;
+        }
+
+        .classificacao__box__laranja {
+            color: $preto;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+
+
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1100px) {
+
+    .grupo, .classificacao {
+        height: 40vw;
+    }
+
+    .classificacao {
+        .classificacao__box {
+            height: 21vw;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1300px) {
+
+    .grupo, .classificacao {
+        height: 38vw;
+    }
+
+    .classificacao {
+        .classificacao__box {
+            height: 20vw;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 1301px) and (max-width: 1500px) {
+
+    .grupo, .classificacao {
+        height: 38vw;
+    }
+
+    .classificacao {
+        .classificacao__box {
+            height: 20vw;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1501px) and (max-width: 1700px) {
+
+    .grupo, .classificacao {
+        height: 37vw;
+    }
+
+    .classificacao {
+        .classificacao__box {
+            height: 20vw;
+        }
+    }
+
+}

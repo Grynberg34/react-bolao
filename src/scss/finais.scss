@@ -1,0 +1,163 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+#fasefinal {
+    .content {
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: unset;
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+}
+
+.fasefinal {
+    padding: 2vw;
+    border: 2px solid $vermelho;
+    margin-bottom: 6vw;
+    margin-left: 6vw;
+    margin-right: 12vw;
+    background-color: rgba($vermelho, 0.2);
+
+    .fasefinal__title {
+        font-size: 30px;
+        color: $vermelho;
+        margin-bottom: 2vw;
+    }
+
+    .fasefinal__jogo {
+        position: relative;
+        margin-bottom: 4vw;
+
+        .fasefinal__jogo__img {
+            width: 6%;
+        }
+
+        .fasefinal__jogo__label {
+            display: inline;
+            margin-right: 1vw;
+        }
+
+        .fasefinal__jogo__label--right {
+            display: inline;
+            margin-left: 1vw;
+        }
+
+
+        .fasefinal__jogo__input {
+            width: 5%;
+            border: 2px solid $vermelho;
+            text-align: center;
+
+            &:focus {
+                border: 2px solid $vermelho;
+                outline: none;
+            }
+        }
+
+        .fasefinal__jogo__vs {
+            color: $vermelho;
+            font-size: 16px;
+        }
+
+        .fasefinal__jogo__vencedor {
+            display: inline-block;
+            position: absolute;
+            top: 2%;
+            margin-left: 2vw;
+            background-color: $vermelho;
+            padding-left: 1vw;
+            padding-right: 1vw;
+
+            .fasefinal__jogo__vencedor__label {
+                display: inline-block;
+                font-size: 10px;
+                text-align: center;
+                color: $branco;
+                padding: 0.2vw;
+            
+            }
+    
+            .fasefinal__jogo__vencedor__input {
+                display: block;
+                width: 90%;
+                text-align: center;
+                font-size: 12px;
+                margin-left: auto;
+                margin-right: auto;
+                border: 2px solid $vermelho;
+                margin-bottom: 0.5vw;
+    
+                &:focus {
+                    border: 2px solid $vermelho;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .fasefinal__button {
+        display: block;
+        width: 40%;
+        margin-top: 4vw;
+        font-size: 18px;
+        padding: 0.5vw;
+        color: $branco;
+        background-color: $vermelho;
+        outline: none;
+        border: none;
+    }
+
+    .fasefinal__msg {
+        font-size: 16px;
+        color: $vermelho;
+        margin-bottom: 2vw;
+    }
+
+    .fasefinal__premios {
+        .fasefinal__premios__label {
+            display: block;
+        }
+        .fasefinal__premios__input {
+            display: block;
+            margin-bottom: 2vw;
+            border: 2px solid $vermelho;
+        }
+
+    }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+
+
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1100px) {
+
+
+
+
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1300px) {
+
+
+
+}
+
+@media only screen and (min-width: 1301px) and (max-width: 1500px) {
+
+
+
+}
+
+@media only screen and (min-width: 1501px) and (max-width: 1700px) {
+
+
+}

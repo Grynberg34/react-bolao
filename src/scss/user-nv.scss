@@ -1,0 +1,46 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+.content {
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.user-nv {
+    margin-top: 15vw;
+
+    .user-nv__title {
+        font-size: 30px;
+        color: $laranja;
+        text-align: center;
+        margin-bottom: 2vw;
+    }
+
+    .user-nv__subtitle {
+        font-size: 16px;
+        color: $preto;
+        font-weight: 400;
+        margin-bottom: 2vw;
+        text-align: center;
+    }
+
+    .user-nv__button {
+        display: block;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        padding: 0.5vw;
+        margin-top: 1vw;
+        color: $preto;
+        background-color: $laranja;
+        outline: none;
+        border: none;
+        margin-bottom: 1vw;
+    }
+}
+
