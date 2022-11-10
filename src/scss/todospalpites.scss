@@ -1,0 +1,164 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+#todospalpites {
+    .content {
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: unset;
+        padding-top: 10vw;
+    }
+}
+
+
+.todospalpites {
+    padding-bottom: 10vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    .todospalpites__header {
+        margin-bottom: 4vw;
+        padding: 2vw;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .todospalpites__header__title {
+            font-size: 40px;
+            color: $preto;
+            margin-bottom: 2vw;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .todospalpites__header__subtitle {
+            font-size: 24px;
+            color: $preto;
+            font-weight: 500;
+            margin-bottom: 1vw;
+            text-align: center;
+        }
+    }
+
+    .todospalpites__pontos {
+        margin-bottom: 4vw;
+        padding: 2vw;
+        padding-top: 4vw;
+        background-color: rgba($laranja, 0.4);
+
+        .todospalpites__pontos__total {
+            font-size: 40px;
+            text-align: center;
+            color: $vermelho;
+            margin-bottom: 4vw;
+            font-weight: 600;
+        }
+
+        .todospalpites__pontos__sub {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 2vw;
+            text-align: center;
+        }
+    }
+
+
+    .todospalpites__palpites {
+        background-color: rgba($vermelho, 0.4);
+        padding: 2vw;
+        padding-top: 4vw;
+
+        .todospalpites__palpites__title {
+            font-size: 50px;
+            text-align: center;
+            color: $vermelho;
+            margin-bottom: 4vw;
+            font-weight: 600;
+        }
+
+        .todospalpites__palpites__subtitle {
+            font-size: 30px;
+            text-align: center;
+            color: $preto;
+            margin-bottom: 4vw;
+            font-weight: 500;
+        }
+
+        .todospalpites__palpites__grupo {
+            margin-bottom: 6vw;
+
+            .todospalpites__palpites__grupo__title {
+                font-size: 24px;
+                text-align: center;
+                color: $preto;
+                margin-bottom: 4vw;
+                font-weight: 500;
+            }
+
+            .todospalpites__palpites__grupo__jogo {
+                margin-bottom: 4vw;
+                text-align: center;
+
+                .todospalpites__palpites__grupo__jogo__img {
+                    margin-right: 1vw;
+                    width: 5%;
+                }
+
+                .right {
+                    margin-right: 0;
+                    margin-left: 1vw;
+                }
+
+                .todospalpites__palpites__grupo__jogo__text {
+                    font-size: 18px;
+                    color: $vermelho;
+                }
+
+                .todospalpites__palpites__grupo__jogo__pontos {
+                    font-size: 14px;
+                    color: $branco;
+                    padding: 0.5vw;
+                    background-color: $vermelho;
+                    width: 10%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        .todospalpites__palpites__finais {
+            margin-bottom: 6vw;
+
+            .todospalpites__palpites__finais__title {
+                font-size: 30px;
+                text-align: center;
+                color: $preto;
+                margin-bottom: 4vw;
+                font-weight: 500;
+            }
+
+            .todospalpites__palpites__finais__jogo {
+                margin-bottom: 4vw;
+                text-align: center;
+
+                .todospalpites__palpites__finais__jogo__img {
+                    margin-right: 1vw;
+                    width: 5%;
+                }
+
+                .right {
+                    margin-right: 0;
+                    margin-left: 1vw;
+                }
+
+                .todospalpites__palpites__finais__jogo__text {
+                    font-size: 18px;
+                    color: $vermelho;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+.barra {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    background-color: $vermelho;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    .barra__logo {
+        width: 50%;
+    }
+
+    .barra__user {
+        font-size: 14px;
+        color: $cinza;
+        margin-top: 0.5vw;
+    }
+
+    .barra__link {
+        display: inline-block;
+        font-size: 14px;
+        color: $laranja;
+        text-decoration: none;
+        margin-top: 0.5vw;
+
+        &:hover {
+            color: $cinza;
+        }
+    }
+
+    .barra__button {
+        display: block;
+        font-size: 14px;
+        padding: 0.5vw;
+        color: $branco;
+        background-color: $laranja;
+        outline: none;
+        border: none;
+
+        &:hover {
+            color: $laranja;
+            background-color: $branco;
+        }
+    }
+}
