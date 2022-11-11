@@ -46,3 +46,41 @@
         }
     }
 }
+
+@media only screen and (min-width: 900px) and (max-width: 1100px) {
+
+    .barra {
+        .barra__logo {
+            width: 60%;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1300px) {
+
+    .barra {
+        .barra__logo {
+            width: 60%;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1301px) and (max-width: 1500px) {
+
+    .barra {
+        .barra__logo {
+            width: 54%;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 1501px) and (max-width: 1700px) {
+
+
+
+}
