@@ -1,0 +1,53 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+#regras {
+    .content {
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: unset;
+        padding-top: 5vw;
+    }
+}
+
+.regras {
+    padding-bottom: 10vw;
+    padding-top: 5vw;
+
+    .regras__title {
+        font-size: 40px;
+        color: $vermelho;
+        margin-bottom: 6vw;
+        font-weight: 600;
+    }
+
+    .regras__section {
+        margin-bottom: 4vw;
+
+        .regras__section__title {
+            font-size: 30px;
+            color: $preto;
+            margin-bottom: 2vw;
+        }
+
+        .regras__section__criterio {
+            margin-bottom: 2vw;
+
+            .regras__section__criterio__title {
+                font-size: 20px;
+                color: $laranja;
+                margin-bottom: 1vw;
+            }
+
+            .regras__section__criterio__exemplos {
+                font-size: 14px;
+                color: $preto;
+                font-weight: 300;
+                line-height: 2;
+            }
+        }
+    }
+}

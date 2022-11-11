@@ -1,0 +1,68 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+#ranking {
+    .content {
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        padding-top: 5vw;
+    }
+}
+
+.ranking {
+    padding-bottom: 10vw;
+
+    .ranking__msg {
+        font-size: 18px;
+        color: $vermelho;
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 4vw;
+    }
+
+    .ranking__header {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 2vw;
+        color: $vermelho;
+    }
+
+    .ranking__row {
+        border-bottom: 1px solid $vermelho;
+    }
+
+    .ranking__posição {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 1vw;
+        margin-top: 1vw;
+    }
+
+    .ranking__nome {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: $preto;
+        text-decoration: none;
+        margin-bottom: 1vw;
+        margin-top: 1vw;
+
+        &:hover {
+            color: $laranja;
+        }
+    }
+
+    .ranking__pontos {
+        font-size: 20px;
+        font-weight: 500;
+        color: $preto;
+        text-decoration: none;
+        margin-bottom: 1vw;
+        margin-top: 1vw;
+    }
+}

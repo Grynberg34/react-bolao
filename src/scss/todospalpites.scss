@@ -19,6 +19,14 @@
     padding-left: 10vw;
     padding-right: 10vw;
 
+    .todospalpites__nome {
+        font-size: 40px;
+        color: $vermelho;
+        font-weight: 600;
+        margin-bottom: 4vw;
+        text-align: center;
+    }
+
     .todospalpites__header {
         margin-bottom: 4vw;
         padding: 2vw;

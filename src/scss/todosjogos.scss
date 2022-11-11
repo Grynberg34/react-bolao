@@ -1,0 +1,71 @@
+@import '../scss/colors.scss';
+@import '../scss/font.scss';
+
+#todosjogos {
+    .content {
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: unset;
+        padding-top: 5vw;
+    }
+}
+
+.todosjogos {
+    padding-bottom: 10vw;
+
+    .todosjogos__msg {
+        font-size: 18px;
+        color: $vermelho;
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 4vw;
+    }   
+
+    .todosjogos__fase {
+        margin-bottom: 8vw;
+        padding-left: 20vw;
+        padding-right: 20vw;
+
+        .todosjogos__fase__title {
+            font-size: 30px;
+            color: $preto;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 4vw;
+        }
+
+        .todosjogos__fase__jogo {
+            margin-bottom: 4vw;
+            text-align: center;
+            border: 2px solid $preto;
+            padding-top: 1vw;
+            padding-bottom: 1.5vw;
+            background-color: rgba($vermelho, 0.4);
+
+            .todosjogos__fase__jogo__info {
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+            }
+
+            .todosjogos__fase__jogo__link {
+                font-size: 18px;
+                color: $preto;
+                text-decoration: none;
+            }
+
+            .todosjogos__fase__jogo__img {
+                width: 10%;
+                margin-right: 0.5vw;
+            }
+
+            .right {
+                margin-right: 0;
+                margin-left: 0.5vw;
+            }
+        }
+    }
+}
