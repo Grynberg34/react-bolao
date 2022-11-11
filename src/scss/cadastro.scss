@@ -91,3 +91,29 @@
         margin-bottom: 1vw;
     }
 }
+
+
+@media only screen and (max-width: 767px) {
+
+    #cadastro {
+        .logo {
+            margin-top: 15vw;
+            margin-bottom: 10vw;
+        }
+    }
+
+    .cadastro-form {
+        .cadastro-form__section {
+            margin-bottom: 10vw;
+        }
+
+        .cadastro-form__button {
+            margin-bottom: 10vw;
+        }
+    }
+
+    .google {
+        margin-bottom: 5vw;
+    }
+
+}

@@ -97,3 +97,14 @@
     text-decoration: none;
     margin-bottom: 1vw;
 }
+
+
+@media only screen and (max-width: 767px) {
+
+    .redefinir {
+        .logo {
+            margin-top: 30vw;
+        }
+    }
+
+}

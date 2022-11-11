@@ -27,3 +27,22 @@
     margin-right: auto;
     height: 40%;
 }
+
+@media only screen and (max-width: 767px) {
+    .content {
+        height: unset;
+    }
+
+    .logo {
+        margin-top: 30vw;
+        margin-bottom: 10vw;
+    }
+
+    .menu {
+        height: 40%;
+        padding: 10vw;
+        padding-top: 15vw;
+    }
+
+
+}
