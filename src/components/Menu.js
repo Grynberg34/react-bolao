@@ -22,8 +22,7 @@ function Menu(props) {
             <Link to="/"><img className="barra__logo" src="/logo2.png" alt="" /></Link>
           </Col>
 
-          <Col md={2}>
-            <h1 className="barra__user">{props.user.nome}</h1>
+          <Col md={1}>
           </Col>
 
           <Col md={2}>
