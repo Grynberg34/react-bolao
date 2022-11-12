@@ -191,7 +191,7 @@ function UserRegras(props) {
 
                           <div className="regras__section__criterio">
                             <h3 className="regras__section__criterio__title">3° lugar - 15% do valor total</h3>
-                            <p className="regras__section__criterio__example">Os 10% restantes do valor total irão para custos operacionais de organização do bolão</p>
+                            <p className="regras__section__criterio__example">Os 10% restantes do valor total irão para custos operacionais de organização do bolão.</p>
                           </div>
 
 
