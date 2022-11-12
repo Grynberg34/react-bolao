@@ -62,7 +62,7 @@ function Login(props) {
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
                   render={renderProps => (
-                    <button className="google" onClick={renderProps.onClick} disabled={renderProps.disabled}> <img className="google__img" src="/home/google.png" alt=""></img> Login Google</button>
+                    <button className="google" onClick={renderProps.onClick}> <img className="google__img" src="/home/google.png" alt=""></img> Login Google</button>
                   )}
                 />
                 <Link className="login__link"  to="/redefinir">Esqueceu a senha?</Link>

@@ -61,7 +61,7 @@ function Cadastro(props) {
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}  
                     render={renderProps => (
-                      <button className="google" onClick={renderProps.onClick} disabled={renderProps.disabled}> <img className="google__img" src="/home/google.png" alt=""></img> Cadastro Google</button>
+                      <button className="google" onClick={renderProps.onClick}> <img className="google__img" src="/home/google.png" alt=""></img> Cadastro Google</button>
                     )}
                   />
                   <Link className="cadastro__link" to="/login">Login</Link>
