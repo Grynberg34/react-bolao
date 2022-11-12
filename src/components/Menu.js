@@ -22,7 +22,7 @@ function Menu(props) {
             <Link to="/"><img className="barra__logo" src="/logo2.png" alt="" /></Link>
           </Col>
 
-          <Col md={1}>
+          <Col md={2}>
           </Col>
 
           <Col md={2} xs={6}>
