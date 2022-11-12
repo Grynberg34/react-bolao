@@ -18,8 +18,8 @@ let TodosPalpites= props => {
     return (
       <div id="todospalpites">
         <div className="content" style={{backgroundImage: `url('/user/background.png')`}}>
-
             <div className="todospalpites">
+              <h1 className="todospalpites__nome">{palpites[5].nome}</h1>
               <Container>
                 <div className="todospalpites__header" style={{backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url('${palpites[5].Seleção.img}')`}}>
                   <h1 className="todospalpites__header__title">Campeão: {palpites[5].Seleção.nome}</h1>
