@@ -136,7 +136,81 @@
 
 @media only screen and (max-width: 767px) {
 
+    #primeirafase {
+        .content {
+            .content__button {
+                margin-left: 2vw;
+                margin-right: 0;
+                margin-bottom: 20vw;
+                width: unset;
+                padding: 4vw;
+                font-size: 14px;
+            }
+        }
+    }
 
+    #palpites-title {
+        margin-top: 20vw;
+        font-size: 30px;
+        margin-bottom: 20vw;
+    }
+
+    .grupo {
+        height: 105vw;
+        padding: 4vw;
+        margin-left: 2vw;
+        margin-bottom: 12vw;
+
+        .grupo__title {
+            font-size: 20px;
+            margin-bottom: 6vw;
+        }
+
+        .grupo__jogo {
+            margin-bottom: 6vw;
+            
+            .grupo__jogo__img {
+                width: 20%;
+            }
+
+            .grupo__jogo__input {
+                width: 15%;
+            }
+
+            .grupo__jogo__label {
+                margin-right: 2vw;
+            }
+
+            .grupo__jogo__label--right {
+                margin-left: 2vw;
+            }
+        }
+    }
+
+    .classificacao {
+        height: 105vw;
+        margin-bottom: 12vw;
+
+        .classificacao__box {
+            height: 54vw;
+            margin-right: 2vw;
+            padding: 4vw;
+
+            .classificacao__box__desktop {
+                display: none
+            }
+
+            .classificacao__box__text {
+                font-size: 12px;
+                margin-bottom: 6vw;
+            }
+
+            .classificacao__box__img {
+                width: 25%;
+                margin-right: 2vw;
+            }
+        }
+    }
 
 }
 

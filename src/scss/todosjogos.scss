@@ -69,3 +69,42 @@
         }
     }
 }
+
+@media only screen and (max-width: 767px) {
+
+    .todosjogos {
+
+        .todosjogos__msg {
+            margin-top: 12vw;
+            margin-bottom: 12vw;
+            font-size: 20px;
+        }
+
+        .todosjogos__fase {
+            .todosjogos__fase__title {
+                font-size: 24px;
+                margin-bottom: 8vw;
+            }
+
+            .todosjogos__fase__jogo {
+                margin-bottom: 6vw;
+                padding: 4vw;
+
+                .todosjogos__fase__jogo__img {
+                    width: 20%;
+                    margin-right: 2vw;
+                }
+
+                .right {
+                    margin-left: 2vw;
+                    margin-right: 0;
+                }
+
+                .todosjogos__fase__jogo__info {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+}

@@ -23,7 +23,7 @@ function UserPix(props) {
           <Col md={4}>
             <div className="user-pix">
               <h1 className="user-pix__title">Olá, {user.nome}!</h1>
-              <h2 className="user-pix__subtitle">Para participar do bolão, faça um PIX para <span className="user-pix__laranja">CPF 101.569.826-33</span> ou escaneie o QR CODE e envie o comprovante para bolao2022copa@gmail.com</h2>
+              <h2 className="user-pix__subtitle">Para participar do bolão, faça um PIX de <span className="user-pix__laranja">30,00R$</span> para <span className="user-pix__laranja">CPF 101.569.826-33</span> ou escaneie o QR CODE e envie o comprovante para bolao2022copa@gmail.com</h2>
               <img className="user-pix__img" src="/user/qrcode.png" alt="" />
               <button className="user-pix__button" onClick={logout}>Logout</button>
             </div>

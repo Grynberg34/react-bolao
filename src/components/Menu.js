@@ -25,19 +25,19 @@ function Menu(props) {
           <Col md={1}>
           </Col>
 
-          <Col md={2}>
+          <Col md={2} xs={6}>
             <Link className="barra__link" to="/user/ranking">Ranking</Link>
           </Col>
 
-          <Col md={2}>
+          <Col md={2} xs={6}>
             <Link className="barra__link" to="/user/jogos">Jogos</Link>
           </Col>
     
-          <Col md={2}>
+          <Col md={2} xs={6}>
             <Link className="barra__link" to="/user/regras">Regras</Link>
           </Col>
 
-          <Col md={2}>
+          <Col md={2} xs={6}>
             <button className="barra__button" onClick={logout}>Logout</button>
           </Col>
         </Row>

@@ -32,10 +32,10 @@ function Bolão(props) {
           <Container>
             <h1 id="palpites-title">Preencha com seus palpites</h1>
             <Row>
-              <Col md={6}>
+              <Col md={6} xs={7}>
                 <JogosPrimeiraFase />
               </Col>
-              <Col md={6}>
+              <Col md={6} xs={5}>
                 <Grupos />
               </Col>
             </Row>

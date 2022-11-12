@@ -53,3 +53,28 @@
         }
     }
 }
+
+@media only screen and (max-width: 767px) {
+
+    .jogo {
+        margin-top: 20vw;
+
+        .jogo__info {
+            margin-bottom: 6vw;
+        }
+
+        .jogo__placar {
+            margin-bottom: 12vw;
+        }
+
+        .jogo__palpite {
+            margin-bottom: 6vw;
+
+            .jogo__palpite__user {
+                font-size: 14px;
+                margin-bottom: 4vw;
+            }
+        }
+    }
+
+}

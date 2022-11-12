@@ -34,28 +34,28 @@ function Ranking(props) {
                 <h1 className="ranking__msg">Clique no nome do participante para ver todos seus palpites</h1>
                 <Container fluid>
                   <Row>
-                      <Col md={2}>
+                      <Col md={2} xs={2}>
                       </Col>
 
-                      <Col md={7}>
+                      <Col md={7} xs={7}>
                         <p className="ranking__header"><strong>Nome</strong></p>
                       </Col>
 
-                      <Col md={3}>
+                      <Col md={3} xs={3}>
                         <p className="ranking__header"><strong>Pontos</strong></p>
                       </Col>
                     </Row>
                   { ranking.map( (user, i) => 
                     <Row className="ranking__row" key={user.id}>
-                      <Col md={2}>
+                      <Col md={2} xs={2}>
                         <p className="ranking__posição">{i+1}</p>
                       </Col>
 
-                      <Col md={7}>
+                      <Col md={7} xs={7}>
                         <Link className="ranking__nome" to={"/user/ranking/" + user.id}>{user.nome}</Link>
                       </Col>
 
-                      <Col md={3}>
+                      <Col md={3} xs={3}>
                         <p className="ranking__pontos">{user.pontos}</p>
                       </Col>
                     </Row>

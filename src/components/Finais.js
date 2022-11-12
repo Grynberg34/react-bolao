@@ -83,7 +83,7 @@ let Finais= props => {
     )
   } else {
     return (
-      <div id="fasefinal">
+      <div id="final">
         <div className="content" style={{backgroundImage: `url('/user/background.png')`}}>
           <Container>
             <div className="fasefinal">

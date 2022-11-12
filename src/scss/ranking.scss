@@ -66,3 +66,37 @@
         margin-top: 1vw;
     }
 }
+
+@media only screen and (max-width: 767px) {
+
+    .ranking {
+        .ranking__msg {
+            margin-top: 12vw;
+            margin-bottom: 12vw;
+        }
+
+        .ranking__header {
+            font-size: 14px;
+        }
+
+        .ranking__posição {
+            font-size: 14px;
+            margin-top: 4vw;
+            margin-bottom: 2vw;
+        }
+
+        .ranking__nome {
+            font-size: 14px;
+            margin-top: 4vw;
+            margin-bottom: 2vw;
+        }
+
+        .ranking__pontos {
+            font-size: 14px;
+            margin-top: 4vw;
+            margin-bottom: 2vw;
+        }
+    }
+
+
+}

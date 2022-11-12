@@ -121,7 +121,49 @@
 
 @media only screen and (max-width: 767px) {
 
+    #fasefinal {
+        .content {
+            height: unset;
+        }
+    }
 
+    .fasefinal {
+        padding: 4vw;
+        margin-bottom: 30vw;
+
+        .fasefinal__title {
+            font-size: 26px;
+            margin-bottom: 10vw;
+            margin-top: 6vw;
+        }
+
+        .fasefinal__jogo {
+            margin-bottom: 20vw;
+
+            .fasefinal__jogo__img {
+                width: 14%;
+            }
+
+            .fasefinal__jogo__input {
+                width: 10%;
+            }
+
+            .fasefinal__jogo__vencedor {
+                padding: 2vw;
+            
+                .fasefinal__jogo__vencedor__label {
+                    font-size: 8px;
+                }
+            }
+        }
+
+        .fasefinal__button {
+            width: 70%;
+            font-size: 14px;
+            padding: 2vw;
+            margin-bottom: 6vw;
+        }
+    }
 
 }
 

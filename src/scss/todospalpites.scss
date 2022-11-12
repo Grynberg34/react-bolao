@@ -170,3 +170,99 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 767px) {
+
+    .todospalpites {
+        padding-bottom: 30vw;
+
+        .todospalpites__nome {
+            font-size: 30px;
+            margin-bottom: 12vw;
+        }
+
+        .todospalpites__palpites {
+            padding: 6vw;
+            margin-bottom: 12vw;
+
+            .todospalpites__palpites__title {
+                font-size: 24px;
+                margin-bottom: 12vw;
+            }
+
+            .todospalpites__palpites__subtitle {
+                font-size: 18px;
+                margin-bottom: 12vw;
+            }
+
+            .todospalpites__palpites__grupo {
+                margin-bottom: 12vw;
+
+                .todospalpites__palpites__grupo__title {
+                    font-size: 16px;
+                }
+
+                .todospalpites__palpites__grupo__jogo {
+                    margin-bottom: 12vw;
+
+                    .todospalpites__palpites__grupo__jogo__img {
+                        width: 20%;
+                    }
+
+                    .todospalpites__palpites__grupo__jogo__pontos {
+                        width: 40%;
+                    }
+                }
+            }
+
+            .todospalpites__palpites__finais {
+                margin-bottom: 12vw;
+                margin-top: 20vw;
+
+                .todospalpites__palpites__finais__title {
+                    font-size: 16px;
+                    margin-bottom: 6vw;
+                }
+
+                .todospalpites__palpites__finais__jogo {
+                    margin-bottom: 12vw;
+
+                    .todospalpites__palpites__finais__jogo__img {
+                        width: 20%;
+                    }
+
+                    .todospalpites__palpites__finais__jogo__pontos {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+
+        .todospalpites__header {
+            margin-bottom: 12vw;
+
+            .todospalpites__header__title {
+                font-size: 20px;
+                margin-bottom: 4vw;
+            }
+
+            .todospalpites__header__subtitle {
+                font-size: 12px;
+            }
+        }
+        .todospalpites__pontos {
+            margin-bottom: 12vw;
+
+            .todospalpites__pontos__total {
+                font-size: 20px;
+            }
+
+            .todospalpites__pontos__sub {
+                font-size: 12px;
+                margin-bottom: 4vw;
+            }
+        }
+    }
+
+}

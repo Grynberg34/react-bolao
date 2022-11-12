@@ -1,7 +1,7 @@
 @import '../scss/colors.scss';
 @import '../scss/font.scss';
 
-#fasefinal {
+#final {
     .content {
         position: relative;
         background-size: cover;
@@ -12,128 +12,173 @@
         padding-top: 10vw;
         padding-bottom: 10vw;
     }
-}
 
-.fasefinal {
-    padding: 2vw;
-    border: 2px solid $vermelho;
-    margin-bottom: 6vw;
-    margin-left: 6vw;
-    margin-right: 12vw;
-    background-color: rgba($vermelho, 0.2);
-
-    .fasefinal__title {
-        font-size: 30px;
-        color: $vermelho;
-        margin-bottom: 2vw;
-    }
-
-    .fasefinal__jogo {
-        position: relative;
-        margin-bottom: 4vw;
-
-        .fasefinal__jogo__img {
-            width: 6%;
-        }
-
-        .fasefinal__jogo__label {
-            display: inline;
-            margin-right: 1vw;
-        }
-
-        .fasefinal__jogo__label--right {
-            display: inline;
-            margin-left: 1vw;
-        }
-
-
-        .fasefinal__jogo__input {
-            width: 5%;
-            border: 2px solid $vermelho;
-            text-align: center;
-
-            &:focus {
-                border: 2px solid $vermelho;
-                outline: none;
-            }
-        }
-
-        .fasefinal__jogo__vs {
+    .fasefinal {
+        padding: 2vw;
+        border: 2px solid $vermelho;
+        margin-bottom: 6vw;
+        margin-left: 6vw;
+        margin-right: 12vw;
+        background-color: rgba($vermelho, 0.2);
+    
+        .fasefinal__title {
+            font-size: 30px;
             color: $vermelho;
-            font-size: 16px;
+            margin-bottom: 2vw;
         }
-
-        .fasefinal__jogo__vencedor {
-            display: inline-block;
-            position: absolute;
-            top: 2%;
-            margin-left: 2vw;
-            background-color: $vermelho;
-            padding-left: 1vw;
-            padding-right: 1vw;
-
-            .fasefinal__jogo__vencedor__label {
-                display: inline-block;
-                font-size: 10px;
-                text-align: center;
-                color: $branco;
-                padding: 0.2vw;
-            
+    
+        .fasefinal__jogo {
+            position: relative;
+            margin-bottom: 4vw;
+    
+            .fasefinal__jogo__img {
+                width: 6%;
             }
     
-            .fasefinal__jogo__vencedor__input {
-                display: block;
-                width: 90%;
-                text-align: center;
-                font-size: 12px;
-                margin-left: auto;
-                margin-right: auto;
+            .fasefinal__jogo__label {
+                display: inline;
+                margin-right: 1vw;
+            }
+    
+            .fasefinal__jogo__label--right {
+                display: inline;
+                margin-left: 1vw;
+            }
+    
+    
+            .fasefinal__jogo__input {
+                width: 5%;
                 border: 2px solid $vermelho;
-                margin-bottom: 0.5vw;
+                text-align: center;
     
                 &:focus {
                     border: 2px solid $vermelho;
                     outline: none;
                 }
             }
+    
+            .fasefinal__jogo__vs {
+                color: $vermelho;
+                font-size: 16px;
+            }
+    
+            .fasefinal__jogo__vencedor {
+                display: inline-block;
+                position: absolute;
+                top: 2%;
+                margin-left: 2vw;
+                background-color: $vermelho;
+                padding-left: 1vw;
+                padding-right: 1vw;
+    
+                .fasefinal__jogo__vencedor__label {
+                    display: inline-block;
+                    font-size: 10px;
+                    text-align: center;
+                    color: $branco;
+                    padding: 0.2vw;
+                
+                }
+        
+                .fasefinal__jogo__vencedor__input {
+                    display: block;
+                    width: 90%;
+                    text-align: center;
+                    font-size: 12px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border: 2px solid $vermelho;
+                    margin-bottom: 0.5vw;
+        
+                    &:focus {
+                        border: 2px solid $vermelho;
+                        outline: none;
+                    }
+                }
+            }
         }
-    }
-
-    .fasefinal__button {
-        display: block;
-        width: 40%;
-        margin-top: 4vw;
-        font-size: 18px;
-        padding: 0.5vw;
-        color: $branco;
-        background-color: $vermelho;
-        outline: none;
-        border: none;
-    }
-
-    .fasefinal__msg {
-        font-size: 16px;
-        color: $vermelho;
-    }
-
-    .fasefinal__premios {
-        .fasefinal__premios__label {
+    
+        .fasefinal__button {
             display: block;
+            width: 40%;
+            margin-top: 4vw;
+            font-size: 18px;
+            padding: 0.5vw;
+            color: $branco;
+            background-color: $vermelho;
+            outline: none;
+            border: none;
         }
-        .fasefinal__premios__input {
-            display: block;
-            margin-bottom: 2vw;
-            border: 2px solid $vermelho;
+    
+        .fasefinal__msg {
+            font-size: 16px;
+            color: $vermelho;
         }
-
-    }
+    
+        .fasefinal__premios {
+            .fasefinal__premios__label {
+                display: block;
+            }
+            .fasefinal__premios__input {
+                display: block;
+                margin-bottom: 2vw;
+                border: 2px solid $vermelho;
+            }
+    
+        }
+    }    
 }
-
 
 
 @media only screen and (max-width: 767px) {
 
+    #final {
+        .fasefinal {
+            padding: 4vw;
+            margin-bottom: 30vw;
+    
+            .fasefinal__title {
+                font-size: 26px;
+                margin-bottom: 10vw;
+                margin-top: 6vw;
+            }
+    
+            .fasefinal__jogo {
+                margin-bottom: 20vw;
+    
+                .fasefinal__jogo__img {
+                    width: 14%;
+                }
+    
+                .fasefinal__jogo__input {
+                    width: 10%;
+                }
+    
+                .fasefinal__jogo__vencedor {
+                    padding: 2vw;
+                
+                    .fasefinal__jogo__vencedor__label {
+                        font-size: 8px;
+                    }
+                }
+            }
 
+            .fasefinal__premios {
+                .fasefinal__premios__input {
+                    margin-bottom: 10vw;
+                    width: 70%;
+                }
+            }
+    
+            .fasefinal__button {
+                width: 70%;
+                font-size: 14px;
+                padding: 2vw;
+                margin-bottom: 6vw;
+            }
+        }
+        
+    }
 
 }
 

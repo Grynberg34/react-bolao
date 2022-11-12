@@ -47,6 +47,33 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+
+    .barra {
+        padding-top: 4vw;
+        padding-bottom: 2vw;
+
+        .barra__logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 6vw;
+        }
+
+        .barra__link {
+            display: block;
+            text-align: center;
+            margin-bottom: 6vw;
+        }
+
+        .barra__button {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}
+
 @media only screen and (min-width: 900px) and (max-width: 1100px) {
 
     .barra {

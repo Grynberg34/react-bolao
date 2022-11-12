@@ -56,3 +56,18 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+
+    .user-pix {
+        margin-top: 50vw;
+
+        .user-pix__subtitle {
+            margin-bottom: 5vw;
+        }
+
+        .user-pix__img {
+            margin-bottom: 10vw;
+        }
+    }
+
+}

@@ -22,7 +22,7 @@ let Grupos= props => {
               {
                 group.classificacao.map( (seleção, index) =>
                 <div className="classificacao__box__nome" key={seleção.nome}>
-                  <p className="classificacao__box__text"> <span className="classificacao__box__index"> {index+1}°</span> <img className="classificacao__box__img" src={seleção.img} alt="" /> <span className="classificacao__box__laranja">P: {seleção.pontos}</span> | S: {seleção.saldo} | GP: {seleção.golsPro} | GC: {seleção.golsContra}</p>
+                  <p className="classificacao__box__text"> <span className="classificacao__box__index"> {index+1}°</span> <img className="classificacao__box__img" src={seleção.img} alt="" /> <span className="classificacao__box__laranja">P: {seleção.pontos}</span> <span className="classificacao__box__desktop">| S: {seleção.saldo} | GP: {seleção.golsPro} | GC: {seleção.golsContra}</span></p>
                 </div>) 
               }
             </div>

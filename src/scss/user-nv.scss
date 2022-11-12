@@ -44,3 +44,14 @@
     }
 }
 
+@media only screen and (max-width: 767px) {
+
+    .user-nv {
+        margin-top: 60vw;
+
+        .user-nv__subtitle {
+            margin-bottom: 10vw;
+        }
+    }
+
+}
