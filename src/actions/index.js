@@ -86,6 +86,7 @@ export const LogoutUser = () => async dispatch => {
 
     await dispatch({ type: 'LOGIN_USER', payload: null });
     await dispatch({ type: 'CHECK_AUTH', payload: false });
+    await dispatch({ type: 'SHOW_ALL_GUESSES', payload: null });
 
 };
 
