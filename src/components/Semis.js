@@ -7,7 +7,6 @@ import { GetSemis } from '../actions';
 import { CheckSemis } from '../actions';
 import Container from 'react-bootstrap/Container';
 import "../scss/fasefinal.scss";
-import debounce from 'lodash.debounce';
 
 let Semis= props => {
 
@@ -77,7 +76,7 @@ let Semis= props => {
               <h1 className="fasefinal__title">Semifinais</h1>
               { semis.map( (match) => 
                 <div className="fasefinal__jogo" key={match.id}>
-                  <form onChange={debounce(submitGame, 400)}>
+                  <form onChange={submitGame}>
                     <div>
                       <label className="fasefinal__jogo__label" htmlFor={'s1-' + match.jogoId}><img className="fasefinal__jogo__img" src={match.s1.img} alt="" /></label>
                       <Field className="fasefinal__jogo__input" min='0' name={'s1-' + match.jogoId} component="input" type="number" />

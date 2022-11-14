@@ -6,8 +6,6 @@ import { SendResult } from '../actions';
 import { CheckGroupStage } from '../actions';
 import { Field, reduxForm } from 'redux-form';
 import "../scss/jogos-pf.scss";
-import debounce from 'lodash.debounce';
-
 
 let JogosPrimeiraFase= props => {
 
@@ -27,7 +25,6 @@ let JogosPrimeiraFase= props => {
   []); 
 
   function submitGame() {
-    console.log(store.getState().form.Jogos.active)
     var jogo = store.getState().form.Jogos.active.substring(3);
     var s1 = 's1-' + jogo;
     var s2 = 's2-' + jogo;
@@ -42,7 +39,9 @@ let JogosPrimeiraFase= props => {
     }
 
     if (s1_placar >= 0 && s2_placar >= 0) {
-      store.dispatch(SendResult(props.jwt, info))
+      setTimeout(() => {
+        store.dispatch(SendResult(props.jwt, info))
+      }, "1000")
     }
 
   }
@@ -63,7 +62,7 @@ let JogosPrimeiraFase= props => {
           <h2 className="grupo__title">Grupo {group.letra}</h2>
           { group.jogos.map( (match) => 
             <div className="grupo__jogo" key={match.id}>
-              <form onChange={debounce(submitGame, 200)}>
+              <form onChange={submitGame}>
                 <div>
                   <label className="grupo__jogo__label" htmlFor={'s1-' + match.id}> <img className="grupo__jogo__img" src={match.s1.img} alt="" /></label>
                   <Field className="grupo__jogo__input" min='0' name={'s1-' + match.id} component="input" type="number" />
