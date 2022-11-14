@@ -111,7 +111,7 @@ let Finais= props => {
 
               <h1 className="fasefinal__title">Final</h1>
               <div className="fasefinal__jogo">
-                <form onChange={debounce(submitAward, 400)}>
+                <form onChange={debounce(submitAward, 2000)}>
                   <div>
                     <label className="fasefinal__jogo__label" htmlFor={'s1-' + finals[1].jogoId}><img className="fasefinal__jogo__img" src={finals[1].s1.img} alt="" /></label>
                     <Field className="fasefinal__jogo__input" min='0' name={'s1-' + finals[1].jogoId} component="input" type="number" />

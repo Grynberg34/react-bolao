@@ -7,6 +7,7 @@ import { GetRound16 } from '../actions';
 import { CheckRound16 } from '../actions';
 import Container from 'react-bootstrap/Container';
 import "../scss/fasefinal.scss";
+import debounce from 'lodash.debounce';
 
 let Oitavas= props => {
 
@@ -76,7 +77,7 @@ let Oitavas= props => {
               <h1 className="fasefinal__title">Oitavas de Final</h1>
               { round16.map( (match) => 
                 <div className="fasefinal__jogo" key={match.id}>
-                  <form onChange={submitGame}>
+                  <form onChange={debounce(submitGame, 400)}>
                     <div>
                       <label className="fasefinal__jogo__label" htmlFor={'s1-' + match.jogoId}> <img className="fasefinal__jogo__img" src={match.s1.img} alt="" /> </label>
                       <Field className="fasefinal__jogo__input" min='0' name={'s1-' + match.jogoId} component="input" type="number" />
