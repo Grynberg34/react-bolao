@@ -65,7 +65,7 @@ let JogosPrimeiraFase= props => {
           <h2 className="grupo__title">Grupo {group.letra}</h2>
           { group.jogos.map( (match) => 
             <div className="grupo__jogo" key={match.id}>
-              <form onChange={debounce(submitGame, 500)}>
+              <form onChange={debounce(submitGame, 200)}>
                 <div>
                   <label className="grupo__jogo__label" htmlFor={'s1-' + match.id}> <img className="grupo__jogo__img" src={match.s1.img} alt="" /></label>
                   <Field className="grupo__jogo__input" min='0' name={'s1-' + match.id} component="input" type="number" />
