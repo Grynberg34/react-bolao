@@ -8,6 +8,7 @@ import { CheckFinals } from '../actions';
 import { SendAward } from '../actions';
 import Container from 'react-bootstrap/Container';
 import "../scss/finais.scss";
+import debounce from 'lodash.debounce';
 
 let Finais= props => {
 
@@ -89,7 +90,7 @@ let Finais= props => {
             <div className="fasefinal">
               <h1 className="fasefinal__title">Disputa do terceiro lugar</h1>
               <div className="fasefinal__jogo">
-                <form onChange={submitGame}>
+                <form onChange={debounce(submitGame, 400)}>
                   <div>
                     <label className="fasefinal__jogo__label" htmlFor={'s1-' + finals[0].jogoId}><img className="fasefinal__jogo__img" src={finals[0].s1.img} alt="" /></label>
                     <Field className="fasefinal__jogo__input" min='0' name={'s1-' + finals[0].jogoId} component="input" type="number" />
@@ -110,7 +111,7 @@ let Finais= props => {
 
               <h1 className="fasefinal__title">Final</h1>
               <div className="fasefinal__jogo">
-                <form onChange={submitGame}>
+                <form onChange={debounce(submitAward, 400)}>
                   <div>
                     <label className="fasefinal__jogo__label" htmlFor={'s1-' + finals[1].jogoId}><img className="fasefinal__jogo__img" src={finals[1].s1.img} alt="" /></label>
                     <Field className="fasefinal__jogo__input" min='0' name={'s1-' + finals[1].jogoId} component="input" type="number" />

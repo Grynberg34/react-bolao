@@ -42,9 +42,7 @@ let JogosPrimeiraFase= props => {
     }
 
     if (s1_placar >= 0 && s2_placar >= 0) {
-      setTimeout(() => {
-        store.dispatch(SendResult(props.jwt, info))
-      }, "1000")
+      store.dispatch(SendResult(props.jwt, info))
     }
 
   }
