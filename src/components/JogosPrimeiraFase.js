@@ -46,8 +46,6 @@ let JogosPrimeiraFase= props => {
 
   var groups = props.groups;
 
-  console.log(groups)
-
   if (groups == null) {
     store.dispatch(GetGroups(props.jwt))
 
