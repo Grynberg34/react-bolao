@@ -7,6 +7,8 @@ let Grupos= props => {
 
   var groupStandings = props.groupStandings;
 
+  console.log(groupStandings)
+
   if (groupStandings == null) {
     store.dispatch(GetGroupStandings(props.jwt))
 

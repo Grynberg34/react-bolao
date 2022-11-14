@@ -13,8 +13,6 @@ let JogosPrimeiraFase= props => {
 
   async function submitGroupStage() {
     await store.dispatch(CheckGroupStage(props.jwt))
-
-    console.log(props.checkGroupStage)
     
     if (props.checkGroupStage === false) {
       setMsg(true);
@@ -48,6 +46,8 @@ let JogosPrimeiraFase= props => {
 
   var groups = props.groups;
 
+  console.log(groups)
+
   if (groups == null) {
     store.dispatch(GetGroups(props.jwt))
 
@@ -58,8 +58,8 @@ let JogosPrimeiraFase= props => {
     return (
       <div>
         { groups.map( (group) => 
-        <div className="grupo" key={group.jogos[0].s1.grupo}>
-          <h2 className="grupo__title">Grupo {group.jogos[0].s1.grupo}</h2>
+        <div className="grupo" key={group.letra}>
+          <h2 className="grupo__title">Grupo {group.letra}</h2>
           { group.jogos.map( (match) => 
             <div className="grupo__jogo" key={match.id}>
               <form onChange={submitGame}>

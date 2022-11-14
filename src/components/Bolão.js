@@ -11,7 +11,7 @@ import { CheckGroupStage } from '../actions';
 
 function Bolão(props) {
 
-  store.dispatch(CheckGroupStage(props.jwt))
+  store.dispatch(CheckGroupStage(props.jwt));
 
   var checkGroupStage = props.checkGroupStage;
 
@@ -30,7 +30,6 @@ function Bolão(props) {
       <div id="primeirafase">
         <div className="content" style={{backgroundImage: `url('/user/background.png')`}}>
           <Container>
-            <h1 id="palpites-title">Preencha com seus palpites</h1>
             <Row>
               <Col md={6} xs={7}>
                 <JogosPrimeiraFase />
