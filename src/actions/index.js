@@ -119,7 +119,14 @@ export const SendResult = (token, info) => async dispatch => {
                 headers: {
                   'Authorization': `Bearer ${token}` 
                 }
-            }).then(function(response){
+            }).then(async function(response){
+
+                await api.post('/user/limpar-jogo-duplicado', info, {
+                    headers: {
+                      'Authorization': `Bearer ${token}` 
+                    }
+                })
+
                 dispatch({ type: 'GET_GROUPSTANDINGS', payload: response.data });
             })
             .catch(function(err){
@@ -304,6 +311,12 @@ export const SendAward = (token, award) => async dispatch => {
         headers: {
           'Authorization': `Bearer ${token}` 
         }
+    }).then(async function(){
+        await api.post('/user/limpar-premios-duplicados', award, {
+            headers: {
+              'Authorization': `Bearer ${token}` 
+            }
+        })
     })
     .catch(function(err){
         console.log(err)
