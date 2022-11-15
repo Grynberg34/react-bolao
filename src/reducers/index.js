@@ -264,6 +264,17 @@ const getAllGuessesReducer = (allGuesses = null, action) => {
   return allGuesses;
 };
 
+
+const getUserInfoReducer = (userInfo = null, action) => {
+  if (action.type === 'SHOW_USER_INFO') {
+
+    return action.payload;
+    
+  }
+  
+  return userInfo;
+};
+
 const getRankingReducer = (ranking = null, action) => {
   if (action.type === 'GET_RANKING') {
 
@@ -332,6 +343,7 @@ export default combineReducers({
   semis: getSemisReducer,
   finals: getFinalsReducer,
   allGuesses: getAllGuessesReducer,
+  userInfo: getUserInfoReducer,
   ranking: getRankingReducer,
   guessesById: getGuessesByIdReducer,
   allMatches: getAllMatchesReducer,

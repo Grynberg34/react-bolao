@@ -339,6 +339,22 @@ export const GetAllGuesses = (token) => async dispatch => {
 
 };
 
+export const GetUserInfo = (token) => async dispatch => {
+
+    await api.get('/user/mostrar-user', {
+        headers: {
+          'Authorization': `Bearer ${token}` 
+        }
+    }).then(async function(response){
+        dispatch({ type: 'SHOW_USER_INFO', payload: response.data });
+    })  
+    .catch(function(err){
+        console.log(err)
+    })
+
+};
+
+
 export const GetRanking = (token) => async dispatch => {
 
     await api.get('/user/ranking', {

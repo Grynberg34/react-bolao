@@ -13,8 +13,6 @@ let RankingId= props => {
 
   var palpites = props.guessesById;
 
-  console.log(palpites)
-
   if (palpites === null || parseInt(id) !== palpites[5].id) {
     store.dispatch(GetGuessesById(props.jwt, id))
     return (
