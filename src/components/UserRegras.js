@@ -79,6 +79,8 @@ function UserRegras(props) {
 
                           <div className="regras__section__criterio">
                             <h3 className="regras__section__criterio__title">Pontos por confronto acertado - 50 pontos</h3>
+                            <p className="regras__section__criterio__exemplos">Para ganhar os pontos por um confronto, é necessário acertar o confronto dentro do chaveamento e não apenas que dois times irão se enfrentar na respectiva fase.</p>
+                            <p className="regras__section__criterio__exemplos">Ex: Se um jogador apostou que o confronto entre o 1° colocado do Grupo A e o 2° colocado do Grupo B seria Holanda x EUA, ele não ganhará pontos caso a Holanda classificar em 2° e os EUA em 1°, formando o confronto do primeiro do Grupo B com o segundo do grupo A, ou seja, o confronto na chave não foi acertado nesse caso.</p>
                           </div>
 
                           <div className="regras__section__criterio">
