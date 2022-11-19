@@ -8,12 +8,13 @@
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-        height: 120vh;
+        height: unset;
         padding-top: 5vw;
     }
 }
 
 .jogo {
+    padding-bottom: 20vw;
 
     .jogo__info {
         font-size: 14px;
