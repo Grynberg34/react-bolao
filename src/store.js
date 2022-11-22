@@ -7,7 +7,7 @@ import reducers from './reducers';
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: ['allMatches']
+    whitelist: ['groupStandings']
 }
    
 const persistedReducer = persistReducer(persistConfig, reducers)
