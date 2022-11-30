@@ -65,7 +65,7 @@ let JogoId= props => {
             
                     { match.palpites.map( (palpite) => 
                       <div className="jogo__palpite" key={palpite.id}>
-                        <p className="jogo__palpite__user"><strong>{palpite.User.nome}:</strong> {palpite.s1.nome} {palpite.s1_placar} x {palpite.s2_placar} {palpite.s2.nome}</p>
+                        <p className="jogo__palpite__user"><strong>{palpite.User.nome}:</strong> <img className="jogo__palpite__img" src={palpite.s1.img} alt="" /> {palpite.s1_placar} x {palpite.s2_placar} <img className="jogo__palpite__img" src={palpite.s2.img} alt="" /></p>
                       </div>
                     )}
                   </div>
