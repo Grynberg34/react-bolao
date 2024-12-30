@@ -22,7 +22,7 @@
         width: 60%;
         margin-left: auto;
         margin-right: auto;
-        font-size: 12px;
+        font-size: 0.625vw;
         padding: 0.5vw;
         margin-top: 1vw;
         color: $preto;
@@ -34,7 +34,7 @@
     }
 
     .login__msg {
-        font-size: 12px;
+        font-size: 0.625vw;
         color: $laranja;
         margin-top: 0.5vw;
         margin-bottom: 1vw;
@@ -52,7 +52,7 @@
         .login-form__section__label {
             display: block;
             text-align: center;
-            font-size: 12px;
+            font-size: 0.625vw;
             margin-bottom: 0.5vw;
             color: $branco;
         }
@@ -63,7 +63,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 1vw;
-            font-size: 12px;
+            font-size: 0.625vw;
         }
 
     }
@@ -89,7 +89,7 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 12px;
+    font-size: 0.625vw;
     padding: 0.5vw;
     margin-top: 1vw;
     color: $preto;
